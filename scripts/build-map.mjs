@@ -247,9 +247,11 @@ function hashText(value) {
   return hash >>> 0;
 }
 
-function separatePoints(points, places, area) {
+function separatePoints(points, places, area, minimumGapOverride) {
   const entries = places.map((place) => ({ id: place.id, ...points.get(place.id) }));
-  const minimumGap = Math.max(58, Math.min(102, Math.sqrt(area.width * area.height / Math.max(1, entries.length)) * 0.44));
+  const minimumGap = minimumGapOverride > 0
+    ? minimumGapOverride
+    : Math.max(58, Math.min(102, Math.sqrt(area.width * area.height / Math.max(1, entries.length)) * 0.44));
   for (let iteration = 0; iteration < 44; iteration += 1) {
     for (let first = 0; first < entries.length; first += 1) {
       for (let second = first + 1; second < entries.length; second += 1) {
@@ -429,7 +431,7 @@ function buildRegion(mapData, manifest) {
   if (!mapData.places.length) return null;
   const selection = templateSelection(mapData, manifest);
   const template = selection.template;
-  const points = separatePoints(projectedLayout(mapData.places, mapData.routes, template.safeArea), mapData.places, template.safeArea);
+  const points = separatePoints(projectedLayout(mapData.places, mapData.routes, template.safeArea), mapData.places, template.safeArea, mapData.pointSpacing === "tight" ? 40 : 0);
   const occupied = [{ x: 18, y: 38, width: 335, height: 360 }, ...mapData.places.map((place) => { const point = points.get(place.id); return { x: point.x - 17, y: point.y - 17, width: 34, height: 34 }; })];
   const renderedPlaces = mapData.places.map((place, index) => {
     const point = points.get(place.id);
