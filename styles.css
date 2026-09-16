@@ -92,12 +92,27 @@ main { overflow: hidden; }
 }
 .hero h1 { margin: 0; max-width: 620px; font-size: clamp(38px, 12vw, 64px); line-height: 0.98; letter-spacing: -0.06em; font-weight: 820; }
 .hero__date { margin: 14px 0 0; font: 650 14px/1.4 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: 0.03em; }
+.hero__tagline { margin: 12px 0 0; color: var(--terracotta); font-size: 15px; font-weight: 740; letter-spacing: 0.01em; }
+.hero__intro { margin: 12px 0 0; max-width: 34em; color: #47575b; font-size: 13px; line-height: 1.75; }
+.hero__route { margin: 14px 0 0; display: flex; flex-wrap: wrap; align-items: center; gap: 3px 6px; color: var(--lake); font: 650 12px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace; }
+.hero__route i { font-style: normal; color: rgba(40, 123, 144, 0.5); font-size: 11px; }
+.hero__facts { margin: 14px 0 0; padding: 0; display: grid; gap: 5px 0; }
+.hero__facts > div { display: grid; grid-template-columns: 3.5em 1fr; gap: 0 12px; align-items: baseline; }
+.hero__facts dt { margin: 0; color: var(--muted); font-size: 10px; font-weight: 780; letter-spacing: 0.1em; }
+.hero__facts dd { margin: 0; color: var(--ink); font-size: 12px; font-weight: 650; line-height: 1.5; }
+.hero__stats { margin: 16px 0 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.hero-stat { padding: 11px 8px 9px; border: 1px solid var(--line); border-radius: 14px; background: rgba(255, 253, 246, 0.72); display: flex; flex-direction: column; gap: 2px; text-align: center; }
+.hero-stat strong { font-size: 22px; line-height: 1; letter-spacing: -0.02em; font-weight: 820; color: var(--ink); }
+.hero-stat strong small { margin-left: 1px; font-size: 11px; font-weight: 750; color: var(--muted); }
+.hero-stat span { color: var(--muted); font-size: 10px; font-weight: 740; letter-spacing: 0.06em; }
+.hero__route[hidden], .hero__facts[hidden], .hero__stats[hidden], .section-hint[hidden] { display: none; }
 
 .section { padding: 44px 18px; scroll-margin-top: 48px; }
 .flights-section { padding-top: 24px; padding-bottom: 34px; }
 .section-heading { margin-bottom: 16px; display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; }
 .section-heading h2 { margin: 0; font-size: 30px; line-height: 1; letter-spacing: -0.04em; }
 .section-index, .soft-label { margin: 0; color: var(--muted); font: 700 11px/1 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: 0.08em; }
+.section-hint { margin: -6px 0 18px; color: var(--muted); font-size: 12px; line-height: 1.6; }
 
 .flight-carousel {
   display: flex;
@@ -168,6 +183,11 @@ main { overflow: hidden; }
 .day-ticket-summary { display: inline-flex; min-height: 24px; margin-top: 9px; padding: 4px 8px; align-items: center; border-radius: 999px; font-size: 10px; font-weight: 760; }
 .day-ticket-summary.has-pending { color: #8f492e; background: #f6e2d8; }
 .day-ticket-summary.is-complete { color: #43654a; background: #dfeade; }
+.day-tags { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-top: 9px; }
+.day-tags .day-ticket-summary { margin-top: 0; }
+.day-lodging { display: inline-flex; min-height: 24px; padding: 4px 9px; align-items: center; border-radius: 999px; font-size: 10px; font-weight: 760; line-height: 1.45; overflow-wrap: anywhere; }
+.day-lodging.is-hotel { color: #6a4d9e; background: #ece7f6; }
+.day-lodging.is-bus { color: #8f492e; background: #f6e2d8; }
 .day-chevron { width: 36px; height: 36px; align-self: center; border: 1px solid var(--line); border-radius: 50%; display: grid; place-items: center; color: var(--lake); transition: transform .2s ease; }
 .day-toggle[aria-expanded="true"] .day-chevron { transform: rotate(45deg); }
 .day-detail { padding: 18px 0 26px; }
@@ -365,6 +385,10 @@ main { overflow: hidden; }
 @media (min-width: 700px) {
   .topbar { padding-inline: max(24px, calc((100vw - var(--content)) / 2)); }
   .hero { min-height: 260px; padding-inline: 0; }
+  .hero__stats { grid-template-columns: repeat(4, minmax(0, 170px)); gap: 10px; }
+  .hero-stat { padding: 14px 10px 12px; }
+  .hero-stat strong { font-size: 26px; }
+  .hero__facts > div { grid-template-columns: 4.5em 1fr; }
   .section { padding-inline: 0; }
   .flight-card { flex-basis: 86%; min-height: 350px; }
   .rental-stops { grid-template-columns: 1fr 1fr; }

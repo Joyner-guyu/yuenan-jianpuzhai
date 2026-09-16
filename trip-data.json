@@ -62,7 +62,67 @@
       "金边"
     ],
     "routeSummary": "北京→河内→岘港（会安）→芽庄→大叻→胡志明市→暹粒（吴哥）→金边→北京，越南纵贯 + 暹粒吴哥 17 天单人之旅",
-    "groupSize": 1
+    "groupSize": 1,
+    "heroTitle": "越南纵贯 + 暹粒吴哥",
+    "heroEyebrow": "VIETNAM × CAMBODIA",
+    "heroTagline": "一个人的 17 天东南亚慢线",
+    "heroDateNote": "独自出行",
+    "heroIntro": "从河内老城区的鸡蛋咖啡，一路南下到岘港的海、芽庄的岛、大叻的山城，再跨境到吴哥的日出与金边——5 段夜巴把交通变成睡觉，白天全部用来玩。",
+    "heroRouteFlow": [
+      "北京",
+      "河内",
+      "岘港（含会安）",
+      "芽庄",
+      "大叻",
+      "胡志明市",
+      "暹粒",
+      "金边",
+      "北京"
+    ],
+    "heroFacts": [
+      {
+        "label": "行程",
+        "text": "17 天 16 晚"
+      },
+      {
+        "label": "同行",
+        "text": "1 人独行 ZHOUJIALE"
+      },
+      {
+        "label": "住宿",
+        "text": "酒店 10 晚 · 夜巴 5 晚 · 中转 1 晚"
+      },
+      {
+        "label": "时区",
+        "text": "UTC+7，比北京时间慢 1 小时"
+      },
+      {
+        "label": "货币",
+        "text": "VND / KHR（美元通用）"
+      }
+    ],
+    "heroStats": [
+      {
+        "value": "17",
+        "unit": "天",
+        "label": "行程"
+      },
+      {
+        "value": "9",
+        "unit": "座",
+        "label": "城市"
+      },
+      {
+        "value": "4",
+        "unit": "段",
+        "label": "航班"
+      },
+      {
+        "value": "6",
+        "unit": "段",
+        "label": "大巴"
+      }
+    ]
   },
   "flightJourneys": [
     {
@@ -298,7 +358,8 @@
           "type": "note",
           "text": "提取行李，按机场指引前往中转免费酒店休息（机票包含）；中转停留 8 小时 05 分，行李需重新托运（可留到早上再办）"
         }
-      ]
+      ],
+      "overnight": "深圳中转免费酒店（机票包含）"
     },
     {
       "day": 2,
@@ -387,7 +448,8 @@
             "old-quarter"
           ]
         }
-      ]
+      ],
+      "overnight": "Little Charm Hanoi Hostel（河内老城区）"
     },
     {
       "day": 3,
@@ -454,7 +516,8 @@
           "type": "note",
           "text": "夜巴发车：HK BUSLINES VIP Cabin 卧铺，河内 → 岘港；票号 DV1LX5，座位 A11（付款后不可退票）。乘车前把票号截图离线保存，贵重物品随身放卧铺内，车厢冷气足备长袖"
         }
-      ]
+      ],
+      "overnight": "夜巴车上（HK BUSLINES VIP Cabin，河内 → 岘港）"
     },
     {
       "day": 4,
@@ -515,7 +578,8 @@
             "my-khe"
           ]
         }
-      ]
+      ],
+      "overnight": "The Memory Danang Boutique（海景，连住 3 晚）"
     },
     {
       "day": 5,
@@ -543,7 +607,8 @@
             "ticket-bana"
           ]
         }
-      ]
+      ],
+      "overnight": "The Memory Danang Boutique"
     },
     {
       "day": 6,
@@ -599,7 +664,8 @@
             "hotel-nav-danang"
           ]
         }
-      ]
+      ],
+      "overnight": "The Memory Danang Boutique"
     },
     {
       "day": 7,
@@ -648,7 +714,8 @@
           "type": "note",
           "text": "夜巴发车：Việt Lào VIP Cabin 卧铺，岘港 → 芽庄；票号 Z4Y529，座位 1B"
         }
-      ]
+      ],
+      "overnight": "夜巴车上（Việt Lào VIP Cabin，岘港 → 芽庄）"
     },
     {
       "day": 8,
@@ -706,7 +773,8 @@
             "nhatrang-beach"
           ]
         }
-      ]
+      ],
+      "overnight": "Florida Hotel（连住 2 晚）"
     },
     {
       "day": 9,
@@ -764,7 +832,8 @@
           "type": "note",
           "text": "回酒店冲洗休整；晚上海边按摩/足疗放松"
         }
-      ]
+      ],
+      "overnight": "Florida Hotel"
     },
     {
       "day": 10,
@@ -820,7 +889,8 @@
             "dalat-night-market"
           ]
         }
-      ]
+      ],
+      "overnight": "Hostel-John Cafe and Beer（大叻）"
     },
     {
       "day": 11,
@@ -873,7 +943,8 @@
           "type": "note",
           "text": "夜巴发车：VIP Cabin 卧铺，大叻 → 胡志明；票号 R22X86，座位 1D（运营方票面显示 Trọt Minh；10-01 23:00 前可免费取消）"
         }
-      ]
+      ],
+      "overnight": "夜巴车上（VIP Cabin，大叻 → 胡志明）"
     },
     {
       "day": 12,
@@ -927,7 +998,8 @@
             "bui-vien"
           ]
         }
-      ]
+      ],
+      "overnight": "MEANDER Saigon"
     },
     {
       "day": 13,
@@ -1001,7 +1073,8 @@
           "type": "note",
           "text": "跨境口岸：途经 Mộc Bài（越）/ Bavet（柬），需带护照下车办理出入境；柬埔寨 e-visa 提前办好，备少量美元"
         }
-      ]
+      ],
+      "overnight": "夜巴车上（Vireak Buntham Express，胡志明 → 暹粒，跨境）"
     },
     {
       "day": 14,
@@ -1058,7 +1131,8 @@
             "old-market-sr"
           ]
         }
-      ]
+      ],
+      "overnight": "Lub d Siem Reap（连住 2 晚）"
     },
     {
       "day": 15,
@@ -1105,7 +1179,8 @@
             "pre-rup"
           ]
         }
-      ]
+      ],
+      "overnight": "Lub d Siem Reap"
     },
     {
       "day": 16,
@@ -1169,7 +1244,8 @@
           "type": "note",
           "text": "夜巴发车：Larryta Bus，暹粒 → 金边；Ref F26-8Qs97d，座位 6，票价 69,000 KHR（不可退改）"
         }
-      ]
+      ],
+      "overnight": "夜巴车上（Larryta Bus，暹粒 → 金边）"
     },
     {
       "day": 17,
@@ -1741,6 +1817,10 @@
         "geo": {
           "lat": 10.8231,
           "lng": 106.6297
+        },
+        "labelOffset": {
+          "x": 32,
+          "y": 50
         }
       },
       {
@@ -1752,6 +1832,10 @@
         "geo": {
           "lat": 13.3633,
           "lng": 103.8564
+        },
+        "labelOffset": {
+          "x": -32,
+          "y": -32
         }
       },
       {
@@ -2086,10 +2170,10 @@
             "x": 722.94,
             "y": 912.26,
             "color": "#8865a5",
-            "tx": 584.94,
-            "ty": 824.26,
+            "tx": 754.94,
+            "ty": 962.26,
             "size": 24,
-            "anchor": "end",
+            "anchor": "start",
             "lines": [
               "胡志明市"
             ],
@@ -2108,8 +2192,8 @@
             "x": 528.07,
             "y": 728.42,
             "color": "#397dc1",
-            "tx": 390.07,
-            "ty": 830.42,
+            "tx": 496.07,
+            "ty": 696.42,
             "size": 24,
             "anchor": "end",
             "lines": [
@@ -2131,7 +2215,7 @@
             "y": 859.19,
             "color": "#209aaa",
             "tx": 571.38,
-            "ty": 909.19,
+            "ty": 827.19,
             "size": 24,
             "anchor": "end",
             "lines": [
@@ -2244,9 +2328,9 @@
                 "anchor": "end"
               },
               "saigon": {
-                "x": 584.94,
-                "y": 824.26,
-                "anchor": "end"
+                "x": 754.94,
+                "y": 962.26,
+                "anchor": "start"
               }
             },
             "transport": [
@@ -2264,13 +2348,13 @@
             ],
             "labels": {
               "saigon": {
-                "x": 584.94,
-                "y": 824.26,
-                "anchor": "end"
+                "x": 754.94,
+                "y": 962.26,
+                "anchor": "start"
               },
               "siemreap": {
-                "x": 390.07,
-                "y": 830.42,
+                "x": 496.07,
+                "y": 696.42,
                 "anchor": "end"
               }
             },
@@ -2289,13 +2373,13 @@
             ],
             "labels": {
               "siemreap": {
-                "x": 390.07,
-                "y": 830.42,
+                "x": 496.07,
+                "y": 696.42,
                 "anchor": "end"
               },
               "phnompenh": {
                 "x": 571.38,
-                "y": 909.19,
+                "y": 827.19,
                 "anchor": "end"
               }
             },

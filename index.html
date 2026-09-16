@@ -7,13 +7,13 @@
   <meta name="format-detection" content="telephone=no">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <title>2026越南 × 柬埔寨</title>
-  <link rel="stylesheet" href="styles.css?v=20260910-3">
+  <title>AI 旅行网页模板</title>
+  <link rel="stylesheet" href="styles.css?v=20260917-1">
   <link rel="stylesheet" href="ledger.css?v=20260910-2">
   <script src="runtime-storage.js?v=20260910-2" defer></script>
   <script src="overview-map.js?v=20260910-2" defer></script>
   <script src="route-ui.js?v=20260910-2" defer></script>
-  <script src="app.js?v=20260910-4" defer></script>
+  <script src="app.js?v=20260917-1" defer></script>
   <script src="ticket-pdf-preview.js?v=20260910-2" defer></script>
   <script src="ledger.js?v=20260910-3" defer></script>
   <script src="site-navigation.js?v=20260910-2" defer></script>
@@ -41,7 +41,12 @@
     <section class="hero" id="top" aria-labelledby="trip-title">
       <div class="hero__eyebrow" id="trip-eyebrow"></div>
       <h1 id="trip-title">正在载入旅程</h1>
+      <p class="hero__tagline" id="trip-tagline" hidden></p>
       <p class="hero__date" id="trip-date"></p>
+      <p class="hero__intro" id="trip-intro" hidden></p>
+      <p class="hero__route" id="trip-route-flow" hidden></p>
+      <dl class="hero__facts" id="hero-facts" hidden></dl>
+      <div class="hero__stats" id="hero-stats" hidden></div>
     </section>
 
     <section class="section flights-section" id="flights" aria-labelledby="flights-title" data-module="flights" hidden>
@@ -76,6 +81,7 @@
         </div>
         <span class="soft-label" id="day-count"></span>
       </div>
+      <p class="section-hint" id="itinerary-hint"></p>
       <div class="timeline" id="timeline"></div>
     </section>
 

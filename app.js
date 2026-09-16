@@ -177,6 +177,7 @@ function renderHero() {
     $("#footer-mark").textContent = "TRIP · READY";
     $("#route-day-count").textContent = "0 DAYS";
     $("#trip-date").textContent = "等待旅行资料";
+    ["#trip-tagline", "#trip-intro", "#trip-route-flow", "#hero-facts", "#hero-stats"].forEach((selector) => { $(selector).hidden = true; });
     return;
   }
   const hero = heroDestinationFor(trip);
@@ -189,7 +190,27 @@ function renderHero() {
   $("#wordmark").innerHTML = `${escapeHtml(shortMark)} <span>· ${escapeHtml(year)}</span>`;
   $("#footer-mark").textContent = `${shortMark} · ${year}`;
   $("#route-day-count").textContent = `${trip.dayCount} DAYS`;
-  $("#trip-date").textContent = `${formatCompactDate(trip.startDate)} — ${formatCompactDate(trip.endDate)} · ${trip.dayCount}天`;
+  $("#trip-date").textContent = `${formatCompactDate(trip.startDate)} — ${formatCompactDate(trip.endDate)} · ${trip.dayCount}天${trip.heroDateNote ? ` · ${trip.heroDateNote}` : ""}`;
+  const tagline = $("#trip-tagline");
+  tagline.textContent = trip.heroTagline || "";
+  tagline.hidden = !trip.heroTagline;
+  const intro = $("#trip-intro");
+  intro.textContent = trip.heroIntro || "";
+  intro.hidden = !trip.heroIntro;
+  const routeFlow = $("#trip-route-flow");
+  const stops = Array.isArray(trip.heroRouteFlow) ? trip.heroRouteFlow.filter(Boolean) : [];
+  routeFlow.hidden = !stops.length;
+  if (stops.length) routeFlow.innerHTML = stops.map((stop) => `<span>${escapeHtml(stop)}</span>`).join("<i aria-hidden=\"true\">→</i>");
+  const facts = $("#hero-facts");
+  const factItems = Array.isArray(trip.heroFacts) ? trip.heroFacts.filter((fact) => fact && fact.label && fact.text) : [];
+  facts.hidden = !factItems.length;
+  if (factItems.length) facts.innerHTML = factItems.map((fact) => `<div><dt>${escapeHtml(fact.label)}</dt><dd>${escapeHtml(fact.text)}</dd></div>`).join("");
+  const stats = $("#hero-stats");
+  const statItems = Array.isArray(trip.heroStats) ? trip.heroStats.filter((stat) => stat && stat.value) : [];
+  stats.hidden = !statItems.length;
+  if (statItems.length) {
+    stats.innerHTML = statItems.map((stat) => `<div class="hero-stat"><strong>${escapeHtml(String(stat.value))}<small>${escapeHtml(stat.unit || "")}</small></strong><span>${escapeHtml(stat.label || "")}</span></div>`).join("");
+  }
 }
 
 function journeyFlights(journeyId) {
@@ -471,6 +492,10 @@ function dayCard(day) {
   const ticketSummary = dayTickets.length
     ? `<span class="day-ticket-summary ${pendingTicketCount ? "has-pending" : "is-complete"}">${pendingTicketCount ? `${pendingTicketCount} 项待购票` : "门票已准备"}</span>`
     : "";
+  const lodgingPill = day.overnight
+    ? `<span class="day-lodging${/^夜巴车上/.test(day.overnight) ? " is-bus" : " is-hotel"}">宿：${escapeHtml(day.overnight)}</span>`
+    : "";
+  const dayTags = (lodgingPill || ticketSummary) ? `<span class="day-tags">${lodgingPill}${ticketSummary}</span>` : "";
   return `
     <article class="day-card${isToday ? " is-today" : ""}" data-day="${day.day}">
       <span class="day-dot" aria-hidden="true"></span>
@@ -479,7 +504,7 @@ function dayCard(day) {
           <span class="day-meta">DAY ${String(day.day).padStart(2, "0")} · ${escapeHtml(formatCompactDate(day.date))}${isToday ? " · 今天" : ""}</span>
           <span class="day-title">${escapeHtml(day.title)}</span>
           <span class="day-locations">${escapeHtml(day.locations.join(" → "))}</span>
-          ${ticketSummary}
+          ${dayTags}
         </span>
         <span class="day-chevron" aria-hidden="true">+</span>
       </button>
@@ -568,6 +593,15 @@ function renderTimeline() {
   const today = currentTripDay();
   state.expandedDay = today;
   $("#day-count").textContent = `${state.data.days.length} DAYS`;
+  const hint = $("#itinerary-hint");
+  if (hint) {
+    const first = state.data.days[0];
+    const last = state.data.days[state.data.days.length - 1];
+    hint.textContent = first && last && first !== last
+      ? `${formatCompactDate(first.date)} 出发 → ${formatCompactDate(last.date)} 返程 · 点击任意一天展开当日安排`
+      : "";
+    hint.hidden = !hint.textContent;
+  }
   $("#timeline").innerHTML = state.data.days.map(dayCard).join("");
   $("#timeline").onclick = (event) => {
     const ticketButton = event.target.closest("[data-ticket-open]");
