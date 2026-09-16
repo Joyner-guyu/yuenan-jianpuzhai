@@ -1,0 +1,2489 @@
+{
+  "$schema": "./schemas/trip-data.schema.json",
+  "schemaVersion": "2.0-lite",
+  "config": {
+    "schemaVersion": "1.0.0",
+    "modules": {
+      "flights": true,
+      "overview": true,
+      "itinerary": true,
+      "todo": true,
+      "driving": false,
+      "ledger": true
+    },
+    "language": "zh-CN",
+    "persistence": {
+      "mode": "local"
+    }
+  },
+  "metadata": {
+    "tripId": "vietnam-cambodia-2026",
+    "title": "越南柬埔寨2026",
+    "language": "zh-CN",
+    "assets": {
+      "routeMaps": [
+        "assets/maps/templates/template-09-radial-watershed.webp",
+        "assets/maps/templates/template-03-coastal.webp"
+      ]
+    }
+  },
+  "trip": {
+    "status": "draft",
+    "startDate": "2026-09-24",
+    "endDate": "2026-10-10",
+    "dayCount": 17,
+    "nightCountAway": 16,
+    "countries": [
+      { "code": "VN", "nameZh": "越南", "name": "Vietnam", "nameEn": "VIETNAM" },
+      { "code": "KH", "nameZh": "柬埔寨", "name": "Cambodia", "nameEn": "CAMBODIA" }
+    ],
+    "primaryDestinationCountries": [
+      "VN",
+      "KH"
+    ],
+    "citiesAndAreas": [
+      "河内",
+      "岘港",
+      "会安",
+      "芽庄",
+      "大叻",
+      "胡志明市",
+      "暹粒",
+      "吴哥窟",
+      "金边"
+    ],
+    "routeSummary": "北京→河内→岘港（会安）→芽庄→大叻→胡志明市→暹粒（吴哥）→金边→北京，越南纵贯 + 暹粒吴哥 17 天单人之旅",
+    "groupSize": 1
+  },
+  "flightJourneys": [
+    {
+      "id": "journey-outbound",
+      "title": "去程：北京 → 河内（深圳中转）"
+    },
+    {
+      "id": "journey-return",
+      "title": "返程：金边 → 北京（深圳中转）"
+    }
+  ],
+  "flights": [
+    {
+      "id": "flight-out-1",
+      "journeyId": "journey-outbound",
+      "sequence": 1,
+      "airline": {
+        "nameZh": "深圳航空"
+      },
+      "flightNumber": "ZH9110",
+      "departure": {
+        "airportCode": "PEK",
+        "city": "北京（首都 T3）",
+        "date": "2026-09-24",
+        "time": "21:00",
+        "utcOffset": "+08:00"
+      },
+      "arrival": {
+        "airportCode": "SZX",
+        "city": "深圳（宝安 T3）",
+        "date": "2026-09-25",
+        "time": "00:30",
+        "utcOffset": "+08:00"
+      },
+      "note": "A321 经济舱，含餐；飞猪订单 9938683852842"
+    },
+    {
+      "id": "flight-out-2",
+      "journeyId": "journey-outbound",
+      "sequence": 2,
+      "airline": {
+        "nameZh": "深圳航空"
+      },
+      "flightNumber": "ZH101",
+      "departure": {
+        "airportCode": "SZX",
+        "city": "深圳（宝安 T3）",
+        "date": "2026-09-25",
+        "time": "08:35",
+        "utcOffset": "+08:00"
+      },
+      "arrival": {
+        "airportCode": "HAN",
+        "city": "河内（内排 T2）",
+        "date": "2026-09-25",
+        "time": "09:40",
+        "utcOffset": "+07:00"
+      },
+      "connectionFromPrevious": {
+        "plannedDurationText": "中转 8 小时 05 分（含免费中转酒店，行李需重新托运）"
+      },
+      "note": "737 MAX 8，含餐；抵达后时差：越南比北京慢 1 小时"
+    },
+    {
+      "id": "flight-back-1",
+      "journeyId": "journey-return",
+      "sequence": 1,
+      "airline": {
+        "nameZh": "深圳航空"
+      },
+      "flightNumber": "ZH156",
+      "departure": {
+        "airportCode": "KTI",
+        "city": "金边（德崇国际机场）",
+        "date": "2026-10-10",
+        "time": "12:15",
+        "utcOffset": "+07:00"
+      },
+      "arrival": {
+        "airportCode": "SZX",
+        "city": "深圳（宝安）",
+        "date": "2026-10-10",
+        "time": "16:05",
+        "utcOffset": "+08:00"
+      },
+      "note": "金边新机场距市区较远，预留 1–1.5 小时车程"
+    },
+    {
+      "id": "flight-back-2",
+      "journeyId": "journey-return",
+      "sequence": 2,
+      "airline": {
+        "nameZh": "深圳航空"
+      },
+      "flightNumber": "ZH9115",
+      "departure": {
+        "airportCode": "SZX",
+        "city": "深圳（宝安）",
+        "date": "2026-10-10",
+        "time": "19:30",
+        "utcOffset": "+08:00"
+      },
+      "arrival": {
+        "airportCode": "PEK",
+        "city": "北京（首都 T3）",
+        "date": "2026-10-10",
+        "time": "22:55",
+        "utcOffset": "+08:00"
+      },
+      "connectionFromPrevious": {
+        "plannedDurationText": "中转 3 小时 25 分（行李直达北京）"
+      },
+      "note": "A320 经济舱，含餐"
+    }
+  ],
+  "accommodations": [
+    {
+      "id": "acc-shenzhen-transfer",
+      "name": "深圳中转酒店（机票包含）",
+      "city": "深圳",
+      "checkIn": "2026-09-24",
+      "checkOut": "2026-09-25",
+      "nights": 1,
+      "status": "已确认"
+    },
+    {
+      "id": "acc-hanoi",
+      "name": "Little Charm Hanoi Hostel",
+      "city": "河内",
+      "checkIn": "2026-09-25 13:00",
+      "checkOut": "2026-09-26 11:00",
+      "nights": 1,
+      "status": "已确认",
+      "platform": "Agoda"
+    },
+    {
+      "id": "acc-danang",
+      "name": "The Memory Danang Boutique",
+      "city": "岘港",
+      "checkIn": "2026-09-27 14:00",
+      "checkOut": "2026-09-30 12:00",
+      "nights": 3,
+      "status": "已确认",
+      "platform": "Agoda",
+      "note": "海景房"
+    },
+    {
+      "id": "acc-nhatrang",
+      "name": "Florida Hotel",
+      "city": "芽庄",
+      "checkIn": "2026-10-01 14:00",
+      "checkOut": "2026-10-03 12:00",
+      "nights": 2,
+      "status": "已确认",
+      "platform": "Agoda"
+    },
+    {
+      "id": "acc-dalat",
+      "name": "Hostel-John Cafe and Beer",
+      "city": "大叻",
+      "checkIn": "2026-10-03 14:00",
+      "checkOut": "2026-10-04 12:00",
+      "nights": 1,
+      "status": "已确认",
+      "platform": "Agoda"
+    },
+    {
+      "id": "acc-saigon",
+      "name": "MEANDER Saigon",
+      "city": "胡志明市",
+      "checkIn": "2026-10-05 15:00",
+      "checkOut": "2026-10-06 12:00",
+      "nights": 1,
+      "status": "已确认",
+      "platform": "Agoda"
+    },
+    {
+      "id": "acc-siemreap",
+      "name": "Lub d Siem Reap",
+      "city": "暹粒",
+      "checkIn": "2026-10-07 14:00",
+      "checkOut": "2026-10-09 12:00",
+      "nights": 2,
+      "status": "已确认",
+      "platform": "Agoda"
+    }
+  ],
+  "groundTransport": {
+    "rentalCar": null,
+    "rentalChecklist": [],
+    "drivingNotes": [],
+    "drivingReferenceLinks": [],
+    "plannedRoadLegs": [],
+    "publicTransitAndRail": []
+  },
+  "days": [
+    {
+      "day": 1,
+      "date": "2026-09-24",
+      "title": "北京出发，飞深圳中转过夜",
+      "locations": [
+        "北京",
+        "深圳"
+      ],
+      "schedule": [
+        {
+          "id": "d1-1",
+          "time": "出发前",
+          "type": "note",
+          "text": "出发前最后检查：越南+柬埔寨 eSIM 或多国流量包已激活；充电宝随身携带、不可托运（民航规定）；护照与机票订单截图离线保存"
+        },
+        {
+          "id": "d1-2",
+          "time": "傍晚",
+          "type": "note",
+          "text": "前往北京首都机场 T3，办理 ZH9110 值机与行李托运（国际航班建议提前 3 小时到达）"
+        },
+        {
+          "id": "d1-3",
+          "time": "21:00",
+          "type": "flight",
+          "text": "ZH9110 起飞：北京首都 T3 → 深圳宝安 T3（A321 经济舱，含餐，3 小时 30 分；飞猪订单 9938683852842）"
+        },
+        {
+          "id": "d1-4",
+          "time": "00:30",
+          "type": "flight",
+          "text": "抵达深圳宝安 T3（9.25 凌晨）"
+        },
+        {
+          "id": "d1-5",
+          "time": "凌晨",
+          "type": "note",
+          "text": "提取行李，按机场指引前往中转免费酒店休息（机票包含）；中转停留 8 小时 05 分，行李需重新托运（可留到早上再办）"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "date": "2026-09-25",
+      "title": "抵达河内，老城区第一晚",
+      "locations": [
+        "深圳",
+        "河内"
+      ],
+      "schedule": [
+        {
+          "id": "d2-1",
+          "time": "早上",
+          "type": "note",
+          "text": "从中转酒店返回深圳宝安机场，办理 ZH101 值机与行李托运（中转段行李需重新托运）"
+        },
+        {
+          "id": "d2-2",
+          "time": "08:35",
+          "type": "flight",
+          "text": "ZH101 起飞：深圳宝安 T3 → 河内内排 T2（737 MAX 8，含餐）"
+        },
+        {
+          "id": "d2-3",
+          "time": "09:40",
+          "type": "flight",
+          "text": "抵达河内内排国际机场 T2（当地时间）：越南、柬埔寨均为 UTC+7，比北京时间慢 1 小时，行程内所有时间均为当地时间。办理入境、提取行李：中国护照需提前办好越南 e-visa（官网申请，一般 3–5 个工作日出签，有效期需覆盖 9.25–10.6 在越停留）"
+        },
+        {
+          "id": "d2-4",
+          "time": "入境后",
+          "type": "note",
+          "text": "换汇/取现：越南以越南盾 VND 现金为主，城市 ATM 取现方便；柬埔寨美元普遍通用（门票、包车多按美元报价），后续行程备少量美元现金 + 银行卡取现"
+        },
+        {
+          "id": "d2-5",
+          "time": "上午",
+          "type": "transfer",
+          "text": "机场 → 老城区：机场大巴或 Grab 网约车，车程约 30–45 分钟",
+          "placeIds": [
+            "hoan-kiem"
+          ]
+        },
+        {
+          "id": "d2-6",
+          "time": "13:00",
+          "type": "check-in",
+          "text": "入住 Little Charm Hanoi Hostel（河内老城区，Agoda 已确认；到早可先寄存行李）",
+          "placeIds": [
+            "hotel-nav-hanoi"
+          ]
+        },
+        {
+          "id": "d2-7",
+          "time": "下午",
+          "type": "attraction",
+          "text": "老城区街巷 + 还剑湖（Hoàn Kiếm）",
+          "placeIds": [
+            "hoan-kiem"
+          ]
+        },
+        {
+          "id": "d2-8",
+          "time": "下午",
+          "type": "attraction",
+          "text": "河内大教堂（圣若瑟大教堂）",
+          "placeIds": [
+            "hanoi-cathedral"
+          ]
+        },
+        {
+          "id": "d2-9",
+          "time": "傍晚",
+          "type": "attraction",
+          "text": "火车街（Train Street）：需在铁轨旁咖啡馆消费才能进入，点杯饮品等火车贴身驶过（班次时间先向店家确认）",
+          "placeIds": [
+            "train-street"
+          ]
+        },
+        {
+          "id": "d2-10",
+          "time": "晚上",
+          "type": "restaurant",
+          "text": "三十六行街夜市；顺路尝河内名物：鸡蛋咖啡、Bún chả 烤肉粉、Phở 河粉",
+          "placeIds": [
+            "old-quarter"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "date": "2026-09-26",
+      "title": "河内经典景点，夜巴南下岘港",
+      "locations": [
+        "河内"
+      ],
+      "schedule": [
+        {
+          "id": "d3-1",
+          "time": "上午",
+          "type": "attraction",
+          "text": "巴亭广场（Ba Đình）：周边可顺游独柱寺、胡志明陵/博物馆",
+          "placeIds": [
+            "ba-dinh"
+          ]
+        },
+        {
+          "id": "d3-2",
+          "time": "上午",
+          "type": "attraction",
+          "text": "文庙（Văn Miếu，国子监）",
+          "placeIds": [
+            "van-mieu"
+          ]
+        },
+        {
+          "id": "d3-3",
+          "time": "上午",
+          "type": "attraction",
+          "text": "昇龙皇城（Thăng Long，世界文化遗产）",
+          "placeIds": [
+            "imperial-citadel"
+          ]
+        },
+        {
+          "id": "d3-4",
+          "time": "11:00",
+          "type": "check-out",
+          "text": "退房 Little Charm Hanoi Hostel（退房时间 11:00），行李寄存前台",
+          "placeIds": [
+            "hotel-nav-hanoi"
+          ]
+        },
+        {
+          "id": "d3-5",
+          "time": "下午",
+          "type": "note",
+          "text": "自由活动：还剑湖周边咖啡馆、超市采购夜巴干粮"
+        },
+        {
+          "id": "d3-6",
+          "time": "20:00",
+          "type": "transfer",
+          "text": "前往夜巴上车点 Số 70 Nguyễn Hữu Huân（老城区、还剑湖附近），提前 30 分钟到",
+          "placeIds": [
+            "busstop-hanoi-70"
+          ]
+        },
+        {
+          "id": "d3-7",
+          "time": "20:30",
+          "type": "note",
+          "text": "夜巴发车：HK BUSLINES VIP Cabin 卧铺，河内 → 岘港；票号 DV1LX5，座位 A11（付款后不可退票）。乘车前把票号截图离线保存，贵重物品随身放卧铺内，车厢冷气足备长袖"
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "date": "2026-09-27",
+      "title": "抵达岘港，山茶半岛 + 海景酒店躺平",
+      "locations": [
+        "岘港"
+      ],
+      "schedule": [
+        {
+          "id": "d4-1",
+          "time": "10:15",
+          "type": "transfer",
+          "text": "夜巴抵达岘港：下车点 Số 26–28 Hà Chương, Sơn Trà（山茶郡）",
+          "placeIds": [
+            "busstop-danang-arrival"
+          ]
+        },
+        {
+          "id": "d4-2",
+          "time": "上午",
+          "type": "note",
+          "text": "安顿、吃早餐。岘港 9 月底仍 30℃+、偶有阵雨：夏装 + 防晒 + 雨具"
+        },
+        {
+          "id": "d4-3",
+          "time": "14:00",
+          "type": "check-in",
+          "text": "入住 The Memory Danang Boutique（海景，连住 3 晚，Agoda 已确认）",
+          "placeIds": [
+            "hotel-nav-danang"
+          ]
+        },
+        {
+          "id": "d4-4",
+          "time": "下午",
+          "type": "attraction",
+          "text": "山茶半岛（Sơn Trà）：灵应寺观音像、沿海盘山公路观景台、野生猴子（勿投喂），傍晚前返回。原计划租车前往，已决定不租车——无有效摩托车驾照在越南骑行属无证驾驶（有罚款与安全风险），改为包车或 Grab 打车",
+          "placeIds": [
+            "son-tra"
+          ]
+        },
+        {
+          "id": "d4-5",
+          "time": "傍晚",
+          "type": "walk",
+          "text": "美溪海滩海边日落",
+          "placeIds": [
+            "my-khe"
+          ]
+        },
+        {
+          "id": "d4-6",
+          "time": "晚上",
+          "type": "restaurant",
+          "text": "海鲜大排档 + 本地 Live Bar：美溪海滩沿线排档集中，点单前确认价格与称重",
+          "placeIds": [
+            "my-khe"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "date": "2026-09-28",
+      "title": "巴拿山（Bà Nà Hills）一日游",
+      "locations": [
+        "岘港"
+      ],
+      "schedule": [
+        {
+          "id": "d5-1",
+          "time": "早上",
+          "type": "note",
+          "text": "早出发避排队。看点：世界纪录长缆车、佛手金桥（Golden Bridge）、法国村、Fantasy Park 游乐园、山顶花园；门票含往返缆车，山顶海拔约 1400 米比海边凉，带薄外套"
+        },
+        {
+          "id": "d5-2",
+          "time": "全天",
+          "type": "attraction",
+          "text": "巴拿山（Bà Nà Hills）一日游",
+          "placeIds": [
+            "ba-na-hills"
+          ],
+          "ticketIds": [
+            "ticket-bana"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "date": "2026-09-29",
+      "title": "会安一日：椰子船 + 古城",
+      "locations": [
+        "岘港",
+        "会安"
+      ],
+      "schedule": [
+        {
+          "id": "d6-1",
+          "time": "上午",
+          "type": "transfer",
+          "text": "岘港 → 会安（车程约 30–45 分钟，包车/Grab/预约接送）",
+          "placeIds": [
+            "hoian"
+          ]
+        },
+        {
+          "id": "d6-2",
+          "time": "上午",
+          "type": "attraction",
+          "text": "椰子船（Cam Thanh 水椰林簸箕船）",
+          "placeIds": [
+            "cam-thanh"
+          ]
+        },
+        {
+          "id": "d6-3",
+          "time": "下午",
+          "type": "attraction",
+          "text": "会安古城：日本廊桥、各大会馆、灯笼街（古城通票约 120,000 VND 含 5 处景点，视兴趣购买）",
+          "placeIds": [
+            "hoi-an-ancient"
+          ]
+        },
+        {
+          "id": "d6-4",
+          "time": "晚上",
+          "type": "restaurant",
+          "text": "会安晚饭：Cao lầu 高楼面、White Rose 白玫瑰、煎饼（Bánh xèo）；如逢农历十四晚，安会花园有夜市与放河灯",
+          "placeIds": [
+            "hoian"
+          ]
+        },
+        {
+          "id": "d6-5",
+          "time": "晚上",
+          "type": "return",
+          "text": "晚饭后回岘港酒店",
+          "placeIds": [
+            "hotel-nav-danang"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 7,
+      "date": "2026-09-30",
+      "title": "美溪海滩桨板，夜巴赴芽庄",
+      "locations": [
+        "岘港"
+      ],
+      "schedule": [
+        {
+          "id": "d7-1",
+          "time": "早上",
+          "type": "walk",
+          "text": "美溪海滩桨板冲浪（SUP）：海滩有多个水上运动点可现场租，早上海面最平静、人也少",
+          "placeIds": [
+            "my-khe"
+          ]
+        },
+        {
+          "id": "d7-2",
+          "time": "白天",
+          "type": "rest",
+          "text": "继续躺平、吃吃喝喝"
+        },
+        {
+          "id": "d7-3",
+          "time": "12:00",
+          "type": "check-out",
+          "text": "退房 The Memory Danang Boutique，行李寄存",
+          "placeIds": [
+            "hotel-nav-danang"
+          ]
+        },
+        {
+          "id": "d7-4",
+          "time": "20:30",
+          "type": "transfer",
+          "text": "前往夜巴上车点 28 Huỳnh Thúc Kháng（Hải Châu 区），提前 30 分钟到",
+          "placeIds": [
+            "busstop-danang-28"
+          ]
+        },
+        {
+          "id": "d7-5",
+          "time": "21:00",
+          "type": "note",
+          "text": "夜巴发车：Việt Lào VIP Cabin 卧铺，岘港 → 芽庄；票号 Z4Y529，座位 1B"
+        }
+      ]
+    },
+    {
+      "day": 8,
+      "date": "2026-10-01",
+      "title": "抵达芽庄，休闲一日",
+      "locations": [
+        "芽庄"
+      ],
+      "schedule": [
+        {
+          "id": "d8-1",
+          "time": "06:45",
+          "type": "transfer",
+          "text": "夜巴抵达芽庄：下车点 Coop Mart（02 Lê Hồng Phong）",
+          "placeIds": [
+            "busstop-nhatrang-coopmart"
+          ]
+        },
+        {
+          "id": "d8-2",
+          "time": "上午",
+          "type": "walk",
+          "text": "早餐（海鲜粉/法棍）、寄存行李、芽庄海滩散步",
+          "placeIds": [
+            "nhatrang-beach"
+          ]
+        },
+        {
+          "id": "d8-3",
+          "time": "14:00",
+          "type": "check-in",
+          "text": "入住 Florida Hotel（连住 2 晚，Agoda 已确认）",
+          "placeIds": [
+            "hotel-nav-nhatrang"
+          ]
+        },
+        {
+          "id": "d8-4",
+          "time": "下午",
+          "type": "attraction",
+          "text": "休闲一日游，芽庄可选：婆那加占婆塔、隆山寺、芽庄大教堂、钟屿石岬角（《情人》取景地）、泥浆浴（I-Resort 等）、珍珠岛乐园",
+          "placeIds": [
+            "po-nagar",
+            "long-son",
+            "nhatrang-cathedral",
+            "hon-chong"
+          ]
+        },
+        {
+          "id": "d8-5",
+          "time": "晚上",
+          "type": "restaurant",
+          "text": "海鲜晚餐 + 海滩酒吧（芽庄海鲜便宜出名）",
+          "placeIds": [
+            "nhatrang-beach"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 9,
+      "date": "2026-10-02",
+      "title": "芽庄海上酒吧船派对跳岛游",
+      "locations": [
+        "芽庄"
+      ],
+      "schedule": [
+        {
+          "id": "d9-1",
+          "time": "08:00",
+          "type": "transfer",
+          "text": "跳岛游出发：酒店接送，集合于 Yolo Ocean Camp – Tour đảo Nha Trang",
+          "placeIds": [
+            "yolo-ocean-camp"
+          ],
+          "ticketIds": [
+            "ticket-island-party"
+          ]
+        },
+        {
+          "id": "d9-2",
+          "time": "09:00",
+          "type": "note",
+          "text": "乘船出海；东潭燕岛（Dong Tam Swallow Island）：珊瑚礁、游泳、浮潜，浮潜装备由导游准备"
+        },
+        {
+          "id": "d9-3",
+          "time": "11:30",
+          "type": "note",
+          "text": "Hòn Môt 岛：海上漂浮酒吧、二层甲板巨型滑梯直接入海、无限量水果/鸡尾酒/音乐"
+        },
+        {
+          "id": "d9-4",
+          "time": "12:30",
+          "type": "note",
+          "text": "YOLO 乐队现场演出（多语言 MC 带动的海岛派对）"
+        },
+        {
+          "id": "d9-5",
+          "time": "13:30",
+          "type": "note",
+          "text": "岛上午餐：越式菜肴 + 米饭；沙滩躺椅、自由游泳、远眺芽庄城景"
+        },
+        {
+          "id": "d9-6",
+          "time": "15:00",
+          "type": "note",
+          "text": "返程"
+        },
+        {
+          "id": "d9-7",
+          "time": "晚上",
+          "type": "note",
+          "text": "回酒店冲洗休整；晚上海边按摩/足疗放松"
+        }
+      ]
+    },
+    {
+      "day": 10,
+      "date": "2026-10-03",
+      "title": "芽庄 → 大叻：疯狂屋 + 夜市",
+      "locations": [
+        "芽庄",
+        "大叻"
+      ],
+      "schedule": [
+        {
+          "id": "d10-1",
+          "time": "09:30",
+          "type": "transfer",
+          "text": "Go365 Limousine 发车：上车点 Venti Coffee（86 Tổ Hữu）；票号 7UU7V5，1 人购 2 座（座位更宽敞）",
+          "placeIds": [
+            "busstop-nhatrang-venti"
+          ]
+        },
+        {
+          "id": "d10-2",
+          "time": "12:45",
+          "type": "transfer",
+          "text": "抵达大叻：下车点 Cafe An Tiến（24 Pasteur）",
+          "placeIds": [
+            "busstop-dalat-antien"
+          ]
+        },
+        {
+          "id": "d10-3",
+          "time": "14:00",
+          "type": "check-in",
+          "text": "入住 Hostel-John Cafe and Beer",
+          "placeIds": [
+            "hotel-nav-dalat"
+          ]
+        },
+        {
+          "id": "d10-4",
+          "time": "下午",
+          "type": "attraction",
+          "text": "疯狂屋（Hằng Nga Crazy House）：童话树屋建筑，越南最奇特建筑之一",
+          "placeIds": [
+            "crazy-house"
+          ]
+        },
+        {
+          "id": "d10-5",
+          "time": "晚上",
+          "type": "restaurant",
+          "text": "大叻夜市：烤肉米纸（nem nướng）、豆浆、草莓甜品。高原城市早晚凉（约 15–20℃），备薄外套",
+          "placeIds": [
+            "dalat-night-market"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 11,
+      "date": "2026-10-04",
+      "title": "粉红修道院 + 大叻休闲，夜巴赴胡志明",
+      "locations": [
+        "大叻"
+      ],
+      "schedule": [
+        {
+          "id": "d11-1",
+          "time": "上午",
+          "type": "attraction",
+          "text": "粉红修道院（Domaine de Marie 圣心修道院）：粉色外墙 + 花园，大叻标志性拍照地",
+          "placeIds": [
+            "domaine-de-marie"
+          ]
+        },
+        {
+          "id": "d11-2",
+          "time": "白天",
+          "type": "attraction",
+          "text": "大叻休闲：春香湖环湖/天鹅船、大叻花园、竹林禅院（单体缆车）、买手信（草莓干、咖啡）",
+          "placeIds": [
+            "xuan-huong",
+            "tram-pagoda"
+          ]
+        },
+        {
+          "id": "d11-3",
+          "time": "12:00",
+          "type": "check-out",
+          "text": "退房 Hostel-John（退房时间 12:00），行李寄存",
+          "placeIds": [
+            "hotel-nav-dalat"
+          ]
+        },
+        {
+          "id": "d11-4",
+          "time": "22:30",
+          "type": "transfer",
+          "text": "前往大叻联运汽车站（Bến xe liên tỉnh，1 Tô Hiến Thành），提前 30 分钟",
+          "placeIds": [
+            "busstop-dalat-station"
+          ]
+        },
+        {
+          "id": "d11-5",
+          "time": "23:00",
+          "type": "note",
+          "text": "夜巴发车：VIP Cabin 卧铺，大叻 → 胡志明；票号 R22X86，座位 1D（运营方票面显示 Trọt Minh；10-01 23:00 前可免费取消）"
+        }
+      ]
+    },
+    {
+      "day": 12,
+      "date": "2026-10-05",
+      "title": "抵达胡志明，范五老街之夜",
+      "locations": [
+        "胡志明市"
+      ],
+      "schedule": [
+        {
+          "id": "d12-1",
+          "time": "06:45",
+          "type": "transfer",
+          "text": "夜巴抵达胡志明：下车点 303 Trần Phú, Quận 5（第五郡）",
+          "placeIds": [
+            "busstop-saigon-q5"
+          ]
+        },
+        {
+          "id": "d12-2",
+          "time": "上午",
+          "type": "note",
+          "text": "第五郡（堤岸华人区）早餐、寄存行李"
+        },
+        {
+          "id": "d12-3",
+          "time": "15:00",
+          "type": "check-in",
+          "text": "入住 MEANDER Saigon",
+          "placeIds": [
+            "hotel-nav-saigon"
+          ]
+        },
+        {
+          "id": "d12-4",
+          "time": "下午",
+          "type": "attraction",
+          "text": "滨城市场（Chợ Bến Thành）、阮惠步行街、咖啡公寓（42 Nguyễn Huệ）",
+          "placeIds": [
+            "ben-thanh",
+            "nguyen-hue",
+            "coffee-apartment"
+          ]
+        },
+        {
+          "id": "d12-5",
+          "time": "晚上",
+          "type": "attraction",
+          "text": "范五老街（Phạm Ngũ Lão）/ Bùi Viện 步行街：背包客夜生活，酒吧与街头小吃。人多注意随身财物——明晚 17:00 出发去暹粒，别玩太晚",
+          "placeIds": [
+            "bui-vien"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 13,
+      "date": "2026-10-06",
+      "title": "胡志明经典一日，跨境夜巴赴暹粒",
+      "locations": [
+        "胡志明市"
+      ],
+      "schedule": [
+        {
+          "id": "d13-1",
+          "time": "上午",
+          "type": "attraction",
+          "text": "新定教堂（耶稣圣心堂，粉红教堂）",
+          "placeIds": [
+            "tan-dinh"
+          ]
+        },
+        {
+          "id": "d13-2",
+          "time": "上午",
+          "type": "attraction",
+          "text": "统一宫（Dinh Độc Lập 独立宫）",
+          "placeIds": [
+            "independence-palace"
+          ]
+        },
+        {
+          "id": "d13-3",
+          "time": "中午",
+          "type": "attraction",
+          "text": "红教堂（西贡圣母大教堂）：近年长期围挡修缮，可能仅能外观参观；对面顺游中央邮局",
+          "placeIds": [
+            "notre-dame",
+            "central-post-office"
+          ]
+        },
+        {
+          "id": "d13-4",
+          "time": "12:00",
+          "type": "check-out",
+          "text": "退房 MEANDER Saigon，行李寄存",
+          "placeIds": [
+            "hotel-nav-saigon"
+          ]
+        },
+        {
+          "id": "d13-5",
+          "time": "下午",
+          "type": "rest",
+          "text": "自由活动、采购夜巴干粮"
+        },
+        {
+          "id": "d13-6",
+          "time": "16:30",
+          "type": "transfer",
+          "text": "前往跨境夜巴上车点 301 Phạm Ngũ Lão（范五老街，District 1），提前 30 分钟到",
+          "placeIds": [
+            "busstop-saigon-pnl"
+          ]
+        },
+        {
+          "id": "d13-7",
+          "time": "17:00",
+          "type": "note",
+          "text": "跨境夜巴发车：Vireak Buntham Express，胡志明 → 暹粒；票号 VET26080023507，床位 3B，乘客 ZHOUJIALE（车票为直达暹粒，原大纲写“胡志明-金边-暹粒”，以车票为准）"
+        },
+        {
+          "id": "d13-8",
+          "time": "途中",
+          "type": "note",
+          "text": "跨境口岸：途经 Mộc Bài（越）/ Bavet（柬），需带护照下车办理出入境；柬埔寨 e-visa 提前办好，备少量美元"
+        }
+      ]
+    },
+    {
+      "day": 14,
+      "date": "2026-10-07",
+      "title": "抵暹粒，吴哥小圈（吴哥寺 → 巴戎寺 → 塔普伦寺）",
+      "locations": [
+        "暹粒"
+      ],
+      "schedule": [
+        {
+          "id": "d14-1",
+          "time": "05:00",
+          "type": "transfer",
+          "text": "跨境夜巴抵达暹粒：下车点 Chong Kaosou（National Road 6）",
+          "placeIds": [
+            "busstop-sr-chongkaosou"
+          ]
+        },
+        {
+          "id": "d14-2",
+          "time": "清晨",
+          "type": "note",
+          "text": "到站后寄存行李、吃早餐休整（吴哥寺日出已调整至明晨）"
+        },
+        {
+          "id": "d14-3",
+          "time": "上午",
+          "type": "attraction",
+          "text": "吴哥窟小圈：吴哥寺（Angkor Wat）→ 巴戎寺（Bayon，高棉的微笑）→ 塔普伦寺（Ta Prohm，《古墓丽影》取景地）；建议包 tuk-tuk（约 USD 15–25/天），行李放车上或寄存酒店；景区暴晒，做好防晒、多补水",
+          "placeIds": [
+            "angkor-wat",
+            "bayon",
+            "ta-prohm"
+          ],
+          "ticketIds": [
+            "ticket-angkor-3day"
+          ]
+        },
+        {
+          "id": "d14-4",
+          "time": "14:00",
+          "type": "check-in",
+          "text": "入住 Lub d Siem Reap（连住 2 晚）",
+          "placeIds": [
+            "hotel-nav-siemreap"
+          ]
+        },
+        {
+          "id": "d14-5",
+          "time": "傍晚",
+          "type": "restaurant",
+          "text": "暹粒老市场（Old Market）逛逛，柬式晚餐（Amok 椰香咖喱鱼）",
+          "placeIds": [
+            "old-market-sr"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 15,
+      "date": "2026-10-08",
+      "title": "吴哥寺日出 + 大圈：圣剑寺 → 比粒寺日落",
+      "locations": [
+        "暹粒"
+      ],
+      "schedule": [
+        {
+          "id": "d15-1",
+          "time": "清晨",
+          "type": "attraction",
+          "text": "吴哥寺（Angkor Wat）看日出（已由昨日调整至此）：日出前约 05:00 乘 tuk-tuk 出发，带手电、提前占西池畔位",
+          "placeIds": [
+            "angkor-wat"
+          ]
+        },
+        {
+          "id": "d15-2",
+          "time": "上午",
+          "type": "attraction",
+          "text": "圣剑寺（Preah Khan）",
+          "placeIds": [
+            "preah-khan"
+          ]
+        },
+        {
+          "id": "d15-3",
+          "time": "白天",
+          "type": "attraction",
+          "text": "大圈顺游：龙蟠水池（Neak Pean）、东梅奔（East Mebon）、塔松寺（Ta Som）、皇家浴池（Srah Srang）",
+          "placeIds": [
+            "neak-pean",
+            "east-mebon"
+          ]
+        },
+        {
+          "id": "d15-4",
+          "time": "傍晚",
+          "type": "attraction",
+          "text": "比粒寺（Pre Rup）看日落：热门日落点，人多需提前占位（不想挤可改在巴戎寺西侧看日落）",
+          "placeIds": [
+            "pre-rup"
+          ]
+        }
+      ]
+    },
+    {
+      "day": 16,
+      "date": "2026-10-09",
+      "title": "吴哥外圈：女王宫 + 崩密列，酒吧街收官，夜巴赴金边",
+      "locations": [
+        "暹粒"
+      ],
+      "schedule": [
+        {
+          "id": "d16-1",
+          "time": "出发前",
+          "type": "check-out",
+          "text": "退房 Lub d Siem Reap，行李寄存前台（外圈来回大半天，回程取行李）",
+          "placeIds": [
+            "hotel-nav-siemreap"
+          ]
+        },
+        {
+          "id": "d16-2",
+          "time": "上午",
+          "type": "attraction",
+          "text": "女王宫（Banteay Srei）：红色砂岩浮雕是吴哥艺术巅峰，上午 10 点前光线最佳；距暹粒车程约 40 分钟",
+          "placeIds": [
+            "banteay-srei"
+          ]
+        },
+        {
+          "id": "d16-3",
+          "time": "中午",
+          "type": "attraction",
+          "text": "崩密列（Beng Mealea）：坍塌废墟、探险感强；另购票约 USD 5（不在吴哥通票内），从女王宫过去顺路",
+          "placeIds": [
+            "beng-melea"
+          ],
+          "ticketIds": [
+            "ticket-beng-melea"
+          ]
+        },
+        {
+          "id": "d16-4",
+          "time": "晚上",
+          "type": "restaurant",
+          "text": "暹粒酒吧街（Pub Street）收官：晚餐 + 小酌",
+          "placeIds": [
+            "pub-street"
+          ]
+        },
+        {
+          "id": "d16-5",
+          "time": "23:00",
+          "type": "transfer",
+          "text": "回酒店取行李，前往 Larryta 上车点（Larryta Bus Siem Reap Branch）",
+          "placeIds": [
+            "busstop-sr-larryta"
+          ]
+        },
+        {
+          "id": "d16-6",
+          "time": "23:30",
+          "type": "note",
+          "text": "夜巴发车：Larryta Bus，暹粒 → 金边；Ref F26-8Qs97d，座位 6，票价 69,000 KHR（不可退改）"
+        }
+      ]
+    },
+    {
+      "day": 17,
+      "date": "2026-10-10",
+      "title": "金边 → 北京，行程结束",
+      "locations": [
+        "金边",
+        "深圳",
+        "北京"
+      ],
+      "schedule": [
+        {
+          "id": "d17-1",
+          "time": "05:30",
+          "type": "transfer",
+          "text": "夜巴抵达金边：下车点 Larryta Bus Phnom Penh Branch",
+          "placeIds": [
+            "busstop-pp-larryta"
+          ]
+        },
+        {
+          "id": "d17-2",
+          "time": "早上",
+          "type": "note",
+          "text": "前往金边德崇国际机场（KTI，新机场）：距市区较远（约 30–50 公里），预留 1–1.5 小时车程；国际航班提前 3 小时到机场值机"
+        },
+        {
+          "id": "d17-3",
+          "time": "12:15",
+          "type": "flight",
+          "text": "ZH156 起飞：金边德崇机场（KTI）→ 深圳（737 MAX 8，2 小时 50 分）"
+        },
+        {
+          "id": "d17-4",
+          "time": "16:05",
+          "type": "note",
+          "text": "抵达深圳（中转 3 小时 25 分，行李直挂北京，无需提取）"
+        },
+        {
+          "id": "d17-5",
+          "time": "19:30",
+          "type": "flight",
+          "text": "ZH9115 起飞：深圳 → 北京首都 T3（A320，含餐）"
+        },
+        {
+          "id": "d17-6",
+          "time": "22:55",
+          "type": "note",
+          "text": "抵达北京首都机场 T3，行程结束"
+        }
+      ]
+    }
+  ],
+  "places": [
+    {
+      "id": "beijing",
+      "nameZh": "北京",
+      "googleMapsQuery": "Beijing, China"
+    },
+    {
+      "id": "shenzhen",
+      "nameZh": "深圳",
+      "googleMapsQuery": "Shenzhen, China"
+    },
+    {
+      "id": "hanoi",
+      "nameZh": "河内",
+      "googleMapsQuery": "Hanoi, Vietnam"
+    },
+    {
+      "id": "danang",
+      "nameZh": "岘港",
+      "googleMapsQuery": "Da Nang, Vietnam"
+    },
+    {
+      "id": "hoian",
+      "nameZh": "会安",
+      "googleMapsQuery": "Hoi An, Vietnam"
+    },
+    {
+      "id": "nhatrang",
+      "nameZh": "芽庄",
+      "googleMapsQuery": "Nha Trang, Vietnam"
+    },
+    {
+      "id": "dalat",
+      "nameZh": "大叻",
+      "googleMapsQuery": "Da Lat, Vietnam"
+    },
+    {
+      "id": "saigon",
+      "nameZh": "胡志明市",
+      "googleMapsQuery": "Ho Chi Minh City, Vietnam"
+    },
+    {
+      "id": "siemreap",
+      "nameZh": "暹粒",
+      "googleMapsQuery": "Siem Reap, Cambodia"
+    },
+    {
+      "id": "phnompenh",
+      "nameZh": "金边",
+      "googleMapsQuery": "Phnom Penh, Cambodia"
+    },
+    {
+      "id": "hoan-kiem",
+      "nameZh": "还剑湖",
+      "cityOrArea": "河内"
+    },
+    {
+      "id": "hanoi-cathedral",
+      "nameZh": "河内大教堂（圣若瑟）",
+      "cityOrArea": "河内"
+    },
+    {
+      "id": "train-street",
+      "nameZh": "火车街",
+      "cityOrArea": "河内"
+    },
+    {
+      "id": "old-quarter",
+      "nameZh": "三十六行街",
+      "cityOrArea": "河内"
+    },
+    {
+      "id": "ba-dinh",
+      "nameZh": "巴亭广场",
+      "cityOrArea": "河内"
+    },
+    {
+      "id": "van-mieu",
+      "nameZh": "文庙与国子监",
+      "cityOrArea": "河内"
+    },
+    {
+      "id": "imperial-citadel",
+      "nameZh": "昇龙皇城",
+      "cityOrArea": "河内"
+    },
+    {
+      "id": "son-tra",
+      "nameZh": "山茶半岛（灵应寺）",
+      "cityOrArea": "岘港"
+    },
+    {
+      "id": "my-khe",
+      "nameZh": "美溪海滩",
+      "cityOrArea": "岘港"
+    },
+    {
+      "id": "ba-na-hills",
+      "nameZh": "巴拿山主题乐园",
+      "cityOrArea": "岘港"
+    },
+    {
+      "id": "cam-thanh",
+      "nameZh": "椰子船水椰林（Cam Thanh）",
+      "cityOrArea": "会安"
+    },
+    {
+      "id": "hoi-an-ancient",
+      "nameZh": "会安古城",
+      "cityOrArea": "会安"
+    },
+    {
+      "id": "po-nagar",
+      "nameZh": "占婆塔（Po Nagar）",
+      "cityOrArea": "芽庄"
+    },
+    {
+      "id": "long-son",
+      "nameZh": "隆山寺",
+      "cityOrArea": "芽庄"
+    },
+    {
+      "id": "nhatrang-cathedral",
+      "nameZh": "芽庄大教堂",
+      "cityOrArea": "芽庄"
+    },
+    {
+      "id": "hon-chong",
+      "nameZh": "钟屿石岬角（Hon Chong）",
+      "cityOrArea": "芽庄"
+    },
+    {
+      "id": "nhatrang-beach",
+      "nameZh": "芽庄海滩",
+      "cityOrArea": "芽庄"
+    },
+    {
+      "id": "crazy-house",
+      "nameZh": "疯狂屋（Crazy House）",
+      "cityOrArea": "大叻"
+    },
+    {
+      "id": "dalat-night-market",
+      "nameZh": "大叻夜市",
+      "cityOrArea": "大叻"
+    },
+    {
+      "id": "domaine-de-marie",
+      "nameZh": "粉红修道院（Domaine de Marie）",
+      "cityOrArea": "大叻"
+    },
+    {
+      "id": "xuan-huong",
+      "nameZh": "春香湖",
+      "cityOrArea": "大叻"
+    },
+    {
+      "id": "tram-pagoda",
+      "nameZh": "竹林禅院",
+      "cityOrArea": "大叻"
+    },
+    {
+      "id": "ben-thanh",
+      "nameZh": "滨城市场",
+      "cityOrArea": "胡志明市"
+    },
+    {
+      "id": "nguyen-hue",
+      "nameZh": "阮惠步行街",
+      "cityOrArea": "胡志明市"
+    },
+    {
+      "id": "coffee-apartment",
+      "nameZh": "咖啡公寓（The Cafe Apartment）",
+      "cityOrArea": "胡志明市"
+    },
+    {
+      "id": "bui-vien",
+      "nameZh": "Bùi Viện 步行街（范五老街）",
+      "cityOrArea": "胡志明市"
+    },
+    {
+      "id": "tan-dinh",
+      "nameZh": "新定教堂（粉红教堂）",
+      "cityOrArea": "胡志明市"
+    },
+    {
+      "id": "independence-palace",
+      "nameZh": "统一宫",
+      "cityOrArea": "胡志明市"
+    },
+    {
+      "id": "notre-dame",
+      "nameZh": "西贡圣母大教堂（红教堂）",
+      "cityOrArea": "胡志明市"
+    },
+    {
+      "id": "central-post-office",
+      "nameZh": "中央邮局",
+      "cityOrArea": "胡志明市"
+    },
+    {
+      "id": "angkor-wat",
+      "nameZh": "吴哥寺（Angkor Wat）",
+      "cityOrArea": "暹粒"
+    },
+    {
+      "id": "bayon",
+      "nameZh": "巴戎寺（Bayon）",
+      "cityOrArea": "暹粒"
+    },
+    {
+      "id": "ta-prohm",
+      "nameZh": "塔普伦寺（Ta Prohm）",
+      "cityOrArea": "暹粒"
+    },
+    {
+      "id": "preah-khan",
+      "nameZh": "圣剑寺（Preah Khan）",
+      "cityOrArea": "暹粒"
+    },
+    {
+      "id": "neak-pean",
+      "nameZh": "龙蟠水池（Neak Pean）",
+      "cityOrArea": "暹粒"
+    },
+    {
+      "id": "east-mebon",
+      "nameZh": "东梅奔（East Mebon）",
+      "cityOrArea": "暹粒"
+    },
+    {
+      "id": "pre-rup",
+      "nameZh": "比粒寺（Pre Rup）",
+      "cityOrArea": "暹粒"
+    },
+    {
+      "id": "banteay-srei",
+      "nameZh": "女王宫（Banteay Srei）",
+      "cityOrArea": "暹粒"
+    },
+    {
+      "id": "beng-melea",
+      "nameZh": "崩密列（Beng Mealea）",
+      "cityOrArea": "暹粒"
+    },
+    {
+      "id": "old-market-sr",
+      "nameZh": "暹粒老市场（Old Market）",
+      "cityOrArea": "暹粒"
+    },
+    {
+      "id": "pub-street",
+      "nameZh": "酒吧街（Pub Street）",
+      "cityOrArea": "暹粒"
+    },
+    {
+      "id": "hotel-nav-hanoi",
+      "nameZh": "Little Charm Hanoi Hostel",
+      "cityOrArea": "河内",
+      "googleMapsQuery": "Little Charm Hanoi Hostel, Hanoi"
+    },
+    {
+      "id": "hotel-nav-danang",
+      "nameZh": "The Memory Danang Boutique",
+      "cityOrArea": "岘港",
+      "googleMapsQuery": "The Memory Danang Boutique, Da Nang"
+    },
+    {
+      "id": "hotel-nav-nhatrang",
+      "nameZh": "Florida Hotel",
+      "cityOrArea": "芽庄",
+      "googleMapsQuery": "Florida Hotel, Nha Trang"
+    },
+    {
+      "id": "hotel-nav-dalat",
+      "nameZh": "Hostel-John Cafe and Beer",
+      "cityOrArea": "大叻",
+      "googleMapsQuery": "Hostel-John Cafe and Beer, Da Lat"
+    },
+    {
+      "id": "hotel-nav-saigon",
+      "nameZh": "MEANDER Saigon",
+      "cityOrArea": "胡志明市",
+      "googleMapsQuery": "MEANDER Saigon, Ho Chi Minh City"
+    },
+    {
+      "id": "hotel-nav-siemreap",
+      "nameZh": "Lub d Siem Reap",
+      "cityOrArea": "暹粒",
+      "googleMapsQuery": "Lub d Siem Reap"
+    },
+    {
+      "id": "yolo-ocean-camp",
+      "nameZh": "Yolo Ocean Camp（跳岛游集合点）",
+      "cityOrArea": "芽庄",
+      "googleMapsQuery": "Yolo Ocean Camp - Tour dao Nha Trang"
+    },
+    {
+      "id": "busstop-hanoi-70",
+      "nameZh": "夜巴上车点（Số 70 Nguyễn Hữu Huân）",
+      "cityOrArea": "河内",
+      "googleMapsQuery": "70 Nguyen Huu Huan, Hoan Kiem, Hanoi"
+    },
+    {
+      "id": "busstop-danang-arrival",
+      "nameZh": "夜巴下车点（Số 26–28 Hà Chương）",
+      "cityOrArea": "岘港",
+      "googleMapsQuery": "26 Ha Chuong, Son Tra, Da Nang"
+    },
+    {
+      "id": "busstop-danang-28",
+      "nameZh": "夜巴上车点（28 Huỳnh Thúc Kháng）",
+      "cityOrArea": "岘港",
+      "googleMapsQuery": "28 Huynh Thuc Khang, Hai Chau, Da Nang"
+    },
+    {
+      "id": "busstop-nhatrang-coopmart",
+      "nameZh": "夜巴下车点（Coop Mart Lê Hồng Phong）",
+      "cityOrArea": "芽庄",
+      "googleMapsQuery": "Coopmart Nha Trang, 2 Le Hong Phong"
+    },
+    {
+      "id": "busstop-nhatrang-venti",
+      "nameZh": "Go365 上车点（Venti Coffee）",
+      "cityOrArea": "芽庄",
+      "googleMapsQuery": "86 To Huu, Nha Trang"
+    },
+    {
+      "id": "busstop-dalat-antien",
+      "nameZh": "Go365 下车点（Cafe An Tiến）",
+      "cityOrArea": "大叻",
+      "googleMapsQuery": "24 Pasteur, Da Lat"
+    },
+    {
+      "id": "busstop-dalat-station",
+      "nameZh": "大叻联运汽车站",
+      "cityOrArea": "大叻",
+      "googleMapsQuery": "Ben xe lien tinh Da Lat, 1 To Hien Thanh"
+    },
+    {
+      "id": "busstop-saigon-q5",
+      "nameZh": "夜巴下车点（303 Trần Phú 第五郡）",
+      "cityOrArea": "胡志明市",
+      "googleMapsQuery": "303 Tran Phu, Quan 5, Ho Chi Minh City"
+    },
+    {
+      "id": "busstop-saigon-pnl",
+      "nameZh": "跨境夜巴上车点（301 Phạm Ngũ Lão）",
+      "cityOrArea": "胡志明市",
+      "googleMapsQuery": "301 Pham Ngu Lao, Quan 1, Ho Chi Minh City"
+    },
+    {
+      "id": "busstop-sr-chongkaosou",
+      "nameZh": "跨境夜巴下车点（Chong Kaosou）",
+      "cityOrArea": "暹粒",
+      "googleMapsQuery": "Chong Kaosou, National Road 6, Siem Reap"
+    },
+    {
+      "id": "busstop-sr-larryta",
+      "nameZh": "Larryta 上车点（Siem Reap Branch）",
+      "cityOrArea": "暹粒",
+      "googleMapsQuery": "Larryta Bus Siem Reap Branch"
+    },
+    {
+      "id": "busstop-pp-larryta",
+      "nameZh": "Larryta 下车点（Phnom Penh Branch）",
+      "cityOrArea": "金边",
+      "googleMapsQuery": "Larryta Bus Phnom Penh Branch"
+    }
+  ],
+  "restaurants": [],
+  "bookingsAndTickets": [],
+  "ticketPlanning": {
+    "statusStorage": "local",
+    "statusStorageNote": "门票状态默认只保存在当前浏览器。",
+    "items": [
+      {
+        "id": "ticket-island-party",
+        "day": 9,
+        "name": "芽庄海上酒吧船派对跳岛游",
+        "requirement": "advance-required",
+        "purchaseStatus": "purchased",
+        "guidance": [
+          "已预订 ¥185/人",
+          "酒店接送，集合点 Yolo Ocean Camp – Tour đảo Nha Trang",
+          "08:00–15:00，含浮潜、漂浮酒吧、滑梯、乐队演出与岛上午餐"
+        ]
+      },
+      {
+        "id": "ticket-bana",
+        "day": 5,
+        "name": "巴拿山门票（含往返缆车）",
+        "requirement": "advance-recommended",
+        "guidance": [
+          "建议提前在线购票",
+          "含世界纪录缆车、佛手金桥、法国村、Fantasy Park"
+        ]
+      },
+      {
+        "id": "ticket-angkor-3day",
+        "day": 14,
+        "name": "吴哥 3 日通票",
+        "requirement": "advance-required",
+        "guidance": [
+          "官方售票中心现场购买，需本人拍照制证",
+          "3 日票 USD 62（1 日 USD 37 / 7 日 USD 72）",
+          "自 10.7 首次入场起 10 天内任选 3 日，入场需佩戴证件"
+        ]
+      },
+      {
+        "id": "ticket-beng-melea",
+        "day": 16,
+        "name": "崩密列门票",
+        "requirement": "on-site",
+        "guidance": [
+          "现场另购，约 USD 5",
+          "不包含在吴哥通票内"
+        ]
+      }
+    ]
+  },
+  "preTrip": {
+    "packingItems": [],
+    "preparationsExplicitlyMentioned": [],
+    "missingNote": "原始资料未列出明确的行前待办；可在下方自行添加（如签证、eSIM、换汇等）。"
+  },
+  "mapLinks": {
+    "providedGoogleMapsLinks": [],
+    "note": "行程项中的 📍 按钮可打开对应地点的谷歌地图。",
+    "cityLevelNavigationDisabled": false,
+    "navigationPolicy": {
+      "noNavigationTypes": [
+        "flight",
+        "note",
+        "rest"
+      ],
+      "selfNavigationTypes": [
+        "drive",
+        "return",
+        "transfer",
+        "check-in",
+        "check-out",
+        "restaurant",
+        "attraction",
+        "walk",
+        "hike"
+      ]
+    },
+    "navigationPlaces": []
+  },
+  "issuesAndUncertainties": [],
+  "map": {
+    "schemaVersion": "1.0-lite",
+    "mapMode": "template-auto",
+    "templateId": "auto",
+    "disclaimer": "本图仅表达地点的相对方位与路线顺序，不代表真实比例或精确地理边界。",
+    "regions": [
+      {
+        "id": "vn",
+        "label": "越南",
+        "countryCode": "VN"
+      },
+      {
+        "id": "kh",
+        "label": "柬埔寨",
+        "countryCode": "KH"
+      }
+    ],
+    "places": [
+      {
+        "id": "hanoi",
+        "nameZh": "河内",
+        "mapRegionId": "vn",
+        "countryCode": "VN",
+        "geo": {
+          "lat": 21.0278,
+          "lng": 105.8342
+        }
+      },
+      {
+        "id": "danang",
+        "nameZh": "岘港",
+        "mapRegionId": "vn",
+        "countryCode": "VN",
+        "geo": {
+          "lat": 16.0544,
+          "lng": 108.2022
+        }
+      },
+      {
+        "id": "hoian",
+        "nameZh": "会安",
+        "mapRegionId": "vn",
+        "countryCode": "VN",
+        "geo": {
+          "lat": 15.8801,
+          "lng": 108.338
+        }
+      },
+      {
+        "id": "nhatrang",
+        "nameZh": "芽庄",
+        "mapRegionId": "vn",
+        "countryCode": "VN",
+        "geo": {
+          "lat": 12.2333,
+          "lng": 109.4333
+        }
+      },
+      {
+        "id": "dalat",
+        "nameZh": "大叻",
+        "mapRegionId": "vn",
+        "countryCode": "VN",
+        "geo": {
+          "lat": 11.9416,
+          "lng": 108.4605
+        }
+      },
+      {
+        "id": "saigon",
+        "nameZh": "胡志明市",
+        "mapRegionId": "vn",
+        "countryCode": "VN",
+        "geo": {
+          "lat": 10.8231,
+          "lng": 106.6297
+        }
+      },
+      {
+        "id": "siemreap",
+        "nameZh": "暹粒",
+        "mapRegionId": "kh",
+        "countryCode": "KH",
+        "geo": {
+          "lat": 13.3633,
+          "lng": 103.8564
+        }
+      },
+      {
+        "id": "angkor",
+        "nameZh": "吴哥窟",
+        "mapRegionId": "kh",
+        "countryCode": "KH",
+        "geo": {
+          "lat": 13.4125,
+          "lng": 103.867
+        }
+      },
+      {
+        "id": "phnompenh",
+        "nameZh": "金边",
+        "mapRegionId": "kh",
+        "countryCode": "KH",
+        "geo": {
+          "lat": 11.5564,
+          "lng": 104.9282
+        }
+      }
+    ],
+    "routes": [
+      {
+        "day": 3,
+        "placeIds": [
+          "hanoi",
+          "danang"
+        ]
+      },
+      {
+        "day": 6,
+        "placeIds": [
+          "danang",
+          "hoian"
+        ]
+      },
+      {
+        "day": 7,
+        "placeIds": [
+          "danang",
+          "nhatrang"
+        ]
+      },
+      {
+        "day": 10,
+        "placeIds": [
+          "nhatrang",
+          "dalat"
+        ]
+      },
+      {
+        "day": 11,
+        "placeIds": [
+          "dalat",
+          "saigon"
+        ]
+      },
+      {
+        "day": 14,
+        "placeIds": [
+          "siemreap",
+          "angkor"
+        ]
+      },
+      {
+        "day": 16,
+        "placeIds": [
+          "siemreap",
+          "phnompenh"
+        ]
+      }
+    ],
+    "dailyRoutes": [
+      {
+        "day": 3,
+        "placeIds": [
+          "hanoi",
+          "danang"
+        ]
+      },
+      {
+        "day": 6,
+        "placeIds": [
+          "danang",
+          "hoian",
+          "danang"
+        ]
+      },
+      {
+        "day": 7,
+        "placeIds": [
+          "danang",
+          "nhatrang"
+        ]
+      },
+      {
+        "day": 10,
+        "placeIds": [
+          "nhatrang",
+          "dalat"
+        ]
+      },
+      {
+        "day": 11,
+        "placeIds": [
+          "dalat",
+          "saigon"
+        ]
+      },
+      {
+        "day": 14,
+        "placeIds": [
+          "siemreap",
+          "angkor",
+          "siemreap"
+        ]
+      },
+      {
+        "day": 16,
+        "placeIds": [
+          "siemreap",
+          "phnompenh"
+        ]
+      }
+    ]
+  },
+  "routeMap": {
+    "defaultRegionId": "vn",
+    "regions": [
+      {
+        "id": "vn",
+        "label": "越南",
+        "countryCode": "VN",
+        "scope": "template-schematic",
+        "mapMode": "frozen-template",
+        "templateId": "radial-watershed",
+        "mapModeReason": "north-south-route",
+        "mapModeMetrics": {
+          "placeCount": 6,
+          "geoPlaceCount": 6,
+          "widthKm": 386.49,
+          "heightKm": 1132.72,
+          "spanKm": 1137.88,
+          "averageNearestKm": 185.26,
+          "components": 1,
+          "largestLegKm": 606.71,
+          "jumpRatio": 2.58
+        },
+        "days": [
+          3,
+          6,
+          7,
+          10,
+          11
+        ],
+        "canvas": {
+          "width": 1448,
+          "height": 1086
+        },
+        "projection": {
+          "type": "relative-schematic",
+          "bounds": null
+        },
+        "baseImage": "assets/maps/templates/template-09-radial-watershed.webp",
+        "title": "越南 · 旅行路线",
+        "ariaLabel": "越南模板化旅行路线示意图，共5天",
+        "disclaimer": "本图仅表达地点的相对方位与路线顺序，不代表真实比例或精确地理边界。",
+        "heading": {
+          "text": "越南",
+          "x": 33,
+          "y": 105,
+          "size": 40
+        },
+        "legend": {
+          "x": 35,
+          "y": 168,
+          "gap": 43
+        },
+        "annotations": [],
+        "routes": [
+          {
+            "day": 3,
+            "color": "#618344",
+            "placeIds": [
+              "hanoi",
+              "danang"
+            ],
+            "paths": [
+              "M622.84 264.9 C678.2 333.2 710.7 411.1 718.33 493.97"
+            ],
+            "overviewPaths": [
+              "M622.84 264.9 C678.2 333.2 710.7 411.1 718.33 493.97"
+            ]
+          },
+          {
+            "day": 6,
+            "color": "#df6185",
+            "placeIds": [
+              "danang",
+              "hoian"
+            ],
+            "paths": [
+              "M718.33 493.97 C730.5 526.2 750.4 552.6 776.84 571.6"
+            ],
+            "overviewPaths": [
+              "M718.33 493.97 C730.5 526.2 750.4 552.6 776.84 571.6"
+            ]
+          },
+          {
+            "day": 7,
+            "color": "#397dc1",
+            "placeIds": [
+              "danang",
+              "nhatrang"
+            ],
+            "paths": [
+              "M718.33 493.97 C780.5 560.5 819.7 638.6 833.66 723.56"
+            ],
+            "overviewPaths": [
+              "M718.33 493.97 C780.5 560.5 819.7 638.6 833.66 723.56"
+            ]
+          },
+          {
+            "day": 10,
+            "color": "#209aaa",
+            "placeIds": [
+              "nhatrang",
+              "dalat"
+            ],
+            "paths": [
+              "M833.66 723.56 C798.6 722.1 766.0 730.2 737.65 747.47"
+            ],
+            "overviewPaths": [
+              "M833.66 723.56 C798.6 722.1 766.0 730.2 737.65 747.47"
+            ]
+          },
+          {
+            "day": 11,
+            "color": "#8865a5",
+            "placeIds": [
+              "dalat",
+              "saigon"
+            ],
+            "paths": [
+              "M737.65 747.47 C716.4 777.0 688.9 798.4 656.76 810.41"
+            ],
+            "overviewPaths": [
+              "M737.65 747.47 C716.4 777.0 688.9 798.4 656.76 810.41"
+            ]
+          }
+        ],
+        "places": [
+          {
+            "id": "hanoi",
+            "x": 622.84,
+            "y": 264.9,
+            "color": "#618344",
+            "tx": 654.84,
+            "ty": 232.9,
+            "size": 24,
+            "anchor": "start",
+            "lines": [
+              "河内"
+            ],
+            "query": "河内 越南",
+            "geo": {
+              "lat": 21.0278,
+              "lng": 105.8342
+            },
+            "days": [
+              3
+            ]
+          },
+          {
+            "id": "danang",
+            "x": 718.33,
+            "y": 493.97,
+            "color": "#618344",
+            "tx": 686.33,
+            "ty": 461.97,
+            "size": 24,
+            "anchor": "end",
+            "lines": [
+              "岘港"
+            ],
+            "query": "岘港 越南",
+            "geo": {
+              "lat": 16.0544,
+              "lng": 108.2022
+            },
+            "days": [
+              3,
+              6,
+              7
+            ]
+          },
+          {
+            "id": "hoian",
+            "x": 776.84,
+            "y": 571.6,
+            "color": "#df6185",
+            "tx": 854.84,
+            "ty": 509.6,
+            "size": 24,
+            "anchor": "start",
+            "lines": [
+              "会安"
+            ],
+            "query": "会安 越南",
+            "geo": {
+              "lat": 15.8801,
+              "lng": 108.338
+            },
+            "days": [
+              6
+            ]
+          },
+          {
+            "id": "nhatrang",
+            "x": 833.66,
+            "y": 723.56,
+            "color": "#397dc1",
+            "tx": 755.66,
+            "ty": 661.56,
+            "size": 24,
+            "anchor": "end",
+            "lines": [
+              "芽庄"
+            ],
+            "query": "芽庄 越南",
+            "geo": {
+              "lat": 12.2333,
+              "lng": 109.4333
+            },
+            "days": [
+              7,
+              10
+            ]
+          },
+          {
+            "id": "dalat",
+            "x": 737.65,
+            "y": 747.47,
+            "color": "#209aaa",
+            "tx": 875.65,
+            "ty": 659.47,
+            "size": 24,
+            "anchor": "start",
+            "lines": [
+              "大叻"
+            ],
+            "query": "大叻 越南",
+            "geo": {
+              "lat": 11.9416,
+              "lng": 108.4605
+            },
+            "days": [
+              10,
+              11
+            ]
+          },
+          {
+            "id": "saigon",
+            "x": 656.76,
+            "y": 810.41,
+            "color": "#8865a5",
+            "tx": 794.76,
+            "ty": 912.41,
+            "size": 24,
+            "anchor": "start",
+            "lines": [
+              "胡志明市"
+            ],
+            "query": "胡志明市 越南",
+            "geo": {
+              "lat": 10.8231,
+              "lng": 106.6297
+            },
+            "days": [
+              11
+            ]
+          }
+        ],
+        "overviewPlaceIds": [
+          "hanoi",
+          "danang",
+          "hoian",
+          "nhatrang",
+          "dalat",
+          "saigon"
+        ],
+        "dailyLayouts": {
+          "3": {
+            "places": [
+              "hanoi",
+              "danang"
+            ],
+            "labels": {
+              "hanoi": {
+                "x": 654.84,
+                "y": 232.9,
+                "anchor": "start"
+              },
+              "danang": {
+                "x": 686.33,
+                "y": 461.97,
+                "anchor": "end"
+              }
+            },
+            "transport": [
+              {
+                "items": [],
+                "x": 670.59,
+                "y": 379.44
+              }
+            ]
+          },
+          "6": {
+            "places": [
+              "danang",
+              "hoian"
+            ],
+            "labels": {
+              "danang": {
+                "x": 686.33,
+                "y": 461.97,
+                "anchor": "end"
+              },
+              "hoian": {
+                "x": 854.84,
+                "y": 509.6,
+                "anchor": "start"
+              }
+            },
+            "transport": [
+              {
+                "items": [],
+                "x": 747.59,
+                "y": 532.79
+              },
+              {
+                "items": [],
+                "x": 747.59,
+                "y": 532.79
+              }
+            ]
+          },
+          "7": {
+            "places": [
+              "danang",
+              "nhatrang"
+            ],
+            "labels": {
+              "danang": {
+                "x": 686.33,
+                "y": 461.97,
+                "anchor": "end"
+              },
+              "nhatrang": {
+                "x": 755.66,
+                "y": 661.56,
+                "anchor": "end"
+              }
+            },
+            "transport": [
+              {
+                "items": [],
+                "x": 776,
+                "y": 608.76
+              }
+            ]
+          },
+          "10": {
+            "places": [
+              "nhatrang",
+              "dalat"
+            ],
+            "labels": {
+              "nhatrang": {
+                "x": 755.66,
+                "y": 661.56,
+                "anchor": "end"
+              },
+              "dalat": {
+                "x": 875.65,
+                "y": 659.47,
+                "anchor": "start"
+              }
+            },
+            "transport": [
+              {
+                "items": [],
+                "x": 785.65,
+                "y": 735.51
+              }
+            ]
+          },
+          "11": {
+            "places": [
+              "dalat",
+              "saigon"
+            ],
+            "labels": {
+              "dalat": {
+                "x": 875.65,
+                "y": 659.47,
+                "anchor": "start"
+              },
+              "saigon": {
+                "x": 794.76,
+                "y": 912.41,
+                "anchor": "start"
+              }
+            },
+            "transport": [
+              {
+                "items": [],
+                "x": 697.2,
+                "y": 778.94
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "kh",
+        "label": "柬埔寨",
+        "countryCode": "KH",
+        "scope": "template-schematic",
+        "mapMode": "frozen-template",
+        "templateId": "coastal-region",
+        "mapModeReason": "north-south-route",
+        "mapModeMetrics": {
+          "placeCount": 3,
+          "geoPlaceCount": 3,
+          "widthKm": 116.02,
+          "heightKm": 206.03,
+          "spanKm": 236.36,
+          "averageNearestKm": 81.12,
+          "components": 1,
+          "largestLegKm": 232.18,
+          "jumpRatio": 1
+        },
+        "days": [
+          14,
+          16
+        ],
+        "canvas": {
+          "width": 1448,
+          "height": 1086
+        },
+        "projection": {
+          "type": "relative-schematic",
+          "bounds": null
+        },
+        "baseImage": "assets/maps/templates/template-03-coastal.webp",
+        "title": "柬埔寨 · 旅行路线",
+        "ariaLabel": "柬埔寨模板化旅行路线示意图，共2天",
+        "disclaimer": "本图仅表达地点的相对方位与路线顺序，不代表真实比例或精确地理边界。",
+        "heading": {
+          "text": "柬埔寨",
+          "x": 33,
+          "y": 105,
+          "size": 40
+        },
+        "legend": {
+          "x": 35,
+          "y": 168,
+          "gap": 43
+        },
+        "annotations": [],
+        "routes": [
+          {
+            "day": 14,
+            "color": "#e77e22",
+            "placeIds": [
+              "siemreap",
+              "angkor"
+            ],
+            "paths": [
+              "M834.83 337.83 C851.1 307.5 857.9 275.1 854.83 242.65"
+            ],
+            "overviewPaths": [
+              "M834.83 337.83 C851.1 307.5 857.9 275.1 854.83 242.65"
+            ]
+          },
+          {
+            "day": 16,
+            "color": "#209aaa",
+            "placeIds": [
+              "siemreap",
+              "phnompenh"
+            ],
+            "paths": [
+              "M834.83 337.83 C902.1 494.8 994.5 635.2 1106.47 750.95"
+            ],
+            "overviewPaths": [
+              "M834.83 337.83 C902.1 494.8 994.5 635.2 1106.47 750.95"
+            ]
+          }
+        ],
+        "places": [
+          {
+            "id": "siemreap",
+            "x": 834.83,
+            "y": 337.83,
+            "color": "#e77e22",
+            "tx": 866.83,
+            "ty": 305.83,
+            "size": 24,
+            "anchor": "start",
+            "lines": [
+              "暹粒"
+            ],
+            "query": "暹粒 柬埔寨",
+            "geo": {
+              "lat": 13.3633,
+              "lng": 103.8564
+            },
+            "days": [
+              14,
+              16
+            ]
+          },
+          {
+            "id": "angkor",
+            "x": 854.83,
+            "y": 242.65,
+            "color": "#e77e22",
+            "tx": 822.83,
+            "ty": 210.65,
+            "size": 24,
+            "anchor": "end",
+            "lines": [
+              "吴哥窟"
+            ],
+            "query": "吴哥窟 柬埔寨",
+            "geo": {
+              "lat": 13.4125,
+              "lng": 103.867
+            },
+            "days": [
+              14
+            ]
+          },
+          {
+            "id": "phnompenh",
+            "x": 1106.47,
+            "y": 750.95,
+            "color": "#209aaa",
+            "tx": 1184.47,
+            "ty": 688.95,
+            "size": 24,
+            "anchor": "start",
+            "lines": [
+              "金边"
+            ],
+            "query": "金边 柬埔寨",
+            "geo": {
+              "lat": 11.5564,
+              "lng": 104.9282
+            },
+            "days": [
+              16
+            ]
+          }
+        ],
+        "overviewPlaceIds": [
+          "siemreap",
+          "angkor",
+          "phnompenh"
+        ],
+        "dailyLayouts": {
+          "14": {
+            "places": [
+              "siemreap",
+              "angkor"
+            ],
+            "labels": {
+              "siemreap": {
+                "x": 866.83,
+                "y": 305.83,
+                "anchor": "start"
+              },
+              "angkor": {
+                "x": 822.83,
+                "y": 210.65,
+                "anchor": "end"
+              }
+            },
+            "transport": [
+              {
+                "items": [],
+                "x": 844.83,
+                "y": 290.24
+              },
+              {
+                "items": [],
+                "x": 844.83,
+                "y": 290.24
+              }
+            ]
+          },
+          "16": {
+            "places": [
+              "siemreap",
+              "phnompenh"
+            ],
+            "labels": {
+              "siemreap": {
+                "x": 866.83,
+                "y": 305.83,
+                "anchor": "start"
+              },
+              "phnompenh": {
+                "x": 1184.47,
+                "y": 688.95,
+                "anchor": "start"
+              }
+            },
+            "transport": [
+              {
+                "items": [],
+                "x": 970.65,
+                "y": 544.39
+              }
+            ]
+          }
+        }
+      }
+    ]
+  }
+}
