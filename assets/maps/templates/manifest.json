@@ -13,6 +13,7 @@
     { "id": "compact-basin", "file": "assets/maps/templates/template-07-compact-basin.webp", "selectionRole": "compact-or-dense-route", "safeArea": { "x": 220, "y": 165, "width": 1000, "height": 720 } },
     { "id": "wide-valley", "file": "assets/maps/templates/template-08-wide-valley.webp", "selectionRole": "east-west-route", "safeArea": { "x": 170, "y": 250, "width": 1110, "height": 560 } },
     { "id": "radial-watershed", "file": "assets/maps/templates/template-09-radial-watershed.webp", "selectionRole": "north-south-or-radial-route", "safeArea": { "x": 230, "y": 170, "width": 970, "height": 730 } },
-    { "id": "broad-riverland", "file": "assets/maps/templates/template-10-broad-riverland.webp", "selectionRole": "wide-or-multi-stop-route", "safeArea": { "x": 180, "y": 150, "width": 1080, "height": 760 } }
+    { "id": "broad-riverland", "file": "assets/maps/templates/template-10-broad-riverland.webp", "selectionRole": "wide-or-multi-stop-route", "safeArea": { "x": 180, "y": 150, "width": 1080, "height": 760 } },
+    { "id": "real-geography-sea", "file": "assets/maps/templates/template-11-real-geography-sea.svg", "selectionRole": "explicit-diy-real-geography", "safeArea": { "x": 48, "y": 44, "width": 1352, "height": 998 } }
   ]
 }
