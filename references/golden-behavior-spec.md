@@ -200,28 +200,44 @@
   When timeline首次渲染  
   Then 该 day为唯一展开项，card有 Today状态及“今天”文字。
 
-- Given不存在匹配 day  
+- Given不存在匹配 day且至少存在一个 trip day  
   When timeline首次渲染  
-  Then `expandedDay=null`，所有 day detail关闭。
+  Then Day 1为唯一展开项，且不显示 Today状态或“今天”文字。
 
 - **[CURRENT IMPLEMENTATION]** “当前旅行日”优先由可选的 `metadata.timeZone` IANA 时区覆盖值决定；缺失或无效时使用当前浏览器时区。
 
-### C02 Accordion 单开、展开和收起
+### C02 独立展开和收起
 
 **[FROZEN BEHAVIOR]**
 
 - Given任意 day toggle被点击  
   When该 day原本关闭  
-  Then 先把所有 toggles设为 collapsed、隐藏所有 details，再仅展开所点 day并更新 `expandedDay`。
+  Then 仅展开所点 day detail、将所点 toggle设为 `aria-expanded=true`，其他 days保持原状态。
 
 - Given所点 day原本展开  
   When再次点击  
-  Then 所有 days关闭，`expandedDay=null`。
+  Then 仅收起所点 day detail、将所点 toggle设为 `aria-expanded=false`，其他 days保持原状态。
 
 - Given展开或收起  
   Then 不自动把 day滚动到视口，也不重建 timeline DOM。
 
-### C03 Schedule content、地图按钮、note/cost/tag
+### C03 全部展开 / 全部收起
+
+**[FROZEN BEHAVIOR]**
+
+- Given至少有两个 trip days  
+  Then 每日行程标题右侧显示批量操作按钮；未全部展开时显示“全部展开”，全部展开时显示“全部收起”。
+
+- Given点击“全部展开”  
+  Then 所有 day detail打开、所有 day toggle的 `aria-expanded=true`、按钮变为“全部收起”并设置 `aria-pressed=true`，且不自动滚动视口。
+
+- Given点击“全部收起”  
+  Then 所有 day detail关闭、所有 day toggle的 `aria-expanded=false`、按钮变为“全部展开”并设置 `aria-pressed=false`，且不自动滚动视口。
+
+- Given手动展开或收起任意 day  
+  Then 继续遵循 C02 的独立切换规则，并同步更新批量操作按钮文字和 `aria-pressed` 状态。
+
+### C04 Schedule content、地图按钮、note/cost/tag
 
 **[FROZEN BEHAVIOR]**
 
