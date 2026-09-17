@@ -8,12 +8,12 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <title>AI 旅行网页模板</title>
-  <link rel="stylesheet" href="styles.css?v=20260917-1">
+  <link rel="stylesheet" href="styles.css?v=20260917-3">
   <link rel="stylesheet" href="ledger.css?v=20260910-2">
   <script src="runtime-storage.js?v=20260910-2" defer></script>
-  <script src="overview-map.js?v=20260910-2" defer></script>
-  <script src="route-ui.js?v=20260910-2" defer></script>
-  <script src="app.js?v=20260917-1" defer></script>
+  <script src="overview-map.js?v=20260917-2" defer></script>
+  <script src="route-ui.js?v=20260917-1" defer></script>
+  <script src="app.js?v=20260917-3" defer></script>
   <script src="ticket-pdf-preview.js?v=20260910-2" defer></script>
   <script src="ledger.js?v=20260910-3" defer></script>
   <script src="site-navigation.js?v=20260910-2" defer></script>
@@ -79,7 +79,10 @@
           <p class="section-kicker">DAY BY DAY</p>
           <h2 id="itinerary-title">每日行程</h2>
         </div>
-        <span class="soft-label" id="day-count"></span>
+        <div class="section-heading__actions">
+          <span class="soft-label" id="day-count"></span>
+          <button class="day-expand-all" id="day-expand-all" type="button" aria-controls="timeline">全部展开</button>
+        </div>
       </div>
       <p class="section-hint" id="itinerary-hint"></p>
       <div class="timeline" id="timeline"></div>

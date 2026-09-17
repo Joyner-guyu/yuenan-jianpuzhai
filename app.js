@@ -591,7 +591,7 @@ function currentTripDay() {
 
 function renderTimeline() {
   const today = currentTripDay();
-  state.expandedDay = today;
+  state.expandedDay = today ?? state.data.days[0]?.day ?? null;
   $("#day-count").textContent = `${state.data.days.length} DAYS`;
   const hint = $("#itinerary-hint");
   if (hint) {
@@ -602,8 +602,27 @@ function renderTimeline() {
       : "";
     hint.hidden = !hint.textContent;
   }
-  $("#timeline").innerHTML = state.data.days.map(dayCard).join("");
-  $("#timeline").onclick = (event) => {
+  const timeline = $("#timeline");
+  timeline.innerHTML = state.data.days.map(dayCard).join("");
+  const expandAll = $("#day-expand-all");
+  const syncExpandAllControl = () => {
+    if (!expandAll) return;
+    const toggles = $$(".day-toggle", timeline);
+    const allExpanded = toggles.length > 0 && toggles.every((button) => button.getAttribute("aria-expanded") === "true");
+    expandAll.textContent = allExpanded ? "全部收起" : "全部展开";
+    expandAll.setAttribute("aria-pressed", String(allExpanded));
+  };
+  if (expandAll) {
+    expandAll.hidden = state.data.days.length < 2;
+    expandAll.onclick = () => {
+      const shouldExpand = expandAll.getAttribute("aria-pressed") !== "true";
+      $$(".day-toggle", timeline).forEach((button) => button.setAttribute("aria-expanded", String(shouldExpand)));
+      $$(".day-detail", timeline).forEach((detail) => { detail.hidden = !shouldExpand; });
+      syncExpandAllControl();
+    };
+    syncExpandAllControl();
+  }
+  timeline.onclick = (event) => {
     const ticketButton = event.target.closest("[data-ticket-open]");
     if (ticketButton) {
       openTicketDialog(ticketButton.dataset.ticketOpen, ticketButton);
@@ -614,15 +633,10 @@ function renderTimeline() {
     const card = toggle.closest(".day-card");
     const dayNumber = Number(card.dataset.day);
     const wasExpanded = toggle.getAttribute("aria-expanded") === "true";
-    $$(".day-toggle", $("#timeline")).forEach((button) => button.setAttribute("aria-expanded", "false"));
-    $$(".day-detail", $("#timeline")).forEach((detail) => { detail.hidden = true; });
-    if (!wasExpanded) {
-      toggle.setAttribute("aria-expanded", "true");
-      $(`#day-detail-${dayNumber}`).hidden = false;
-      state.expandedDay = dayNumber;
-    } else {
-      state.expandedDay = null;
-    }
+    toggle.setAttribute("aria-expanded", String(!wasExpanded));
+    $(`#day-detail-${dayNumber}`).hidden = wasExpanded;
+    state.expandedDay = wasExpanded && state.expandedDay === dayNumber ? null : dayNumber;
+    syncExpandAllControl();
   };
   $("#timeline").onchange = (event) => {
     const checkbox = event.target.closest(".schedule-ticket input[type='checkbox']");

@@ -112,6 +112,8 @@ main { overflow: hidden; }
 .section-heading { margin-bottom: 16px; display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; }
 .section-heading h2 { margin: 0; font-size: 30px; line-height: 1; letter-spacing: -0.04em; }
 .section-index, .soft-label { margin: 0; color: var(--muted); font: 700 11px/1 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: 0.08em; }
+.section-heading__actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 8px 10px; }
+.day-expand-all { min-height: 32px; padding: 6px 10px; border: 1px solid var(--line); border-radius: 999px; color: var(--lake); background: rgba(255, 255, 255, 0.7); font: 700 11px/1 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: 0.05em; cursor: pointer; }
 .section-hint { margin: -6px 0 18px; color: var(--muted); font-size: 12px; line-height: 1.6; }
 
 .flight-carousel {
@@ -399,13 +401,20 @@ main { overflow: hidden; }
   *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
 }
 
-/* Map is the main surface; date controls remain compact. */
-.route-region-tabs,.route-day-tabs { display:flex;align-items:center;gap:5px;flex-wrap:wrap;margin-bottom:10px; }
-.route-region-tabs button,.route-day-tabs button { border:0;background:transparent;padding:7px 10px;font-size:13px;border-radius:6px;cursor:pointer; }
+/* Map is the main surface; date controls stay easy to find. */
+.route-region-tabs { display:flex;align-items:center;gap:5px;flex-wrap:wrap;margin:0 0 12px; }
+.route-region-tabs button { min-height:36px;border:0;background:transparent;padding:7px 10px;font-size:13px;border-radius:6px;cursor:pointer; }
 .route-region-tabs button[aria-pressed="true"] {background:var(--ink);color:white;}
-.route-day-tabs button {font-size:12px;padding:7px 8px;}
-.route-day-tabs button[aria-pressed="true"] {background:white;box-shadow:inset 0 0 0 1px var(--line);}
+.route-day-picker { margin:0 0 14px;padding:11px 12px 12px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.78);box-shadow:0 8px 20px rgba(25,47,55,.06); }
+.route-day-picker__label { margin:0 0 8px;color:var(--lake);font:800 10px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.1em; }
+.route-day-tabs { display:flex;align-items:center;gap:7px;flex-wrap:nowrap;overflow-x:auto;overscroll-behavior-inline:contain;margin:0 -2px;padding:2px 2px 5px;scrollbar-width:thin; }
+.route-day-tabs::-webkit-scrollbar { height:4px; }
+.route-day-tabs::-webkit-scrollbar-thumb { border-radius:999px;background:#b6c8c5; }
+.route-day-tabs button { flex:0 0 auto;min-height:36px;border:1px solid transparent;border-radius:9px;background:#edf2f1;padding:0 11px;color:var(--ink);font-size:12px;font-weight:750;cursor:pointer; }
+.route-day-tabs button:hover { border-color:#b7cdca;background:#e4efed; }
+.route-day-tabs button[aria-pressed="true"] {border-color:var(--lake);background:var(--lake);color:white;box-shadow:0 4px 10px rgba(40,123,144,.2);}
 .route-day-tabs i {display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--route-color);margin-right:5px;}
+.route-day-tabs button[aria-pressed="true"] i {background:white;box-shadow:0 0 0 1px rgba(255,255,255,.35);}
 .travel-map-scroll {overflow-x:auto;overscroll-behavior-inline:contain;scrollbar-width:thin;border-radius:12px;border:1px solid var(--line);background:#f6f6f1;}
 .travel-map-canvas {position:relative;min-width:700px;}
 .travel-map-canvas svg {display:block;width:100%;height:auto;}

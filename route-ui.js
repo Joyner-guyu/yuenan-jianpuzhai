@@ -80,6 +80,10 @@ function mapArtwork(source, selected, id, viewport) {
     label.querySelectorAll("tspan").forEach((line) => line.setAttribute("x", labelLayout.x));
   });
   svg.querySelectorAll("[id]").forEach((element) => { element.id = `${id}-${element.id}`; });
+  svg.querySelectorAll("[marker-end]").forEach((path) => {
+    const markerId = path.getAttribute("marker-end")?.match(/^url\(#(.+)\)$/)?.[1];
+    if (markerId) path.setAttribute("marker-end", `url(#${id}-${markerId})`);
+  });
   return new XMLSerializer().serializeToString(svg);
 }
 
@@ -134,7 +138,7 @@ function renderRoutePanel(regionId, dayNumber = 0) {
   mapRoutes = mapRouteDefinitions(source);
   const route = mapRoutes.find((item) => item.day === dayNumber);
   root.innerHTML = `<div class="route-region-tabs" aria-label="旅行国家">${regions.map((region) => `<button type="button" data-route-region="${escapeHtml(region.id)}" aria-pressed="${region.id === source.id}">${escapeHtml(region.label || region.heading?.text || region.id)}</button>`).join("")}</div>
-  <div class="route-day-tabs" aria-label="${escapeHtml(source.label || "当前国家")}路线日期"><button type="button" data-route-day="0" aria-pressed="${!route}">总览</button>${mapRoutes.map((item) => { const day = state.data.days.find((candidate) => candidate.day === item.day); return day ? `<button type="button" data-route-day="${item.day}" style="--route-color:${item.color}" aria-pressed="${item === route}"><i></i>${day.date.slice(5).replace("-", "/")}</button>` : ""; }).join("")}</div>${travelMapMarkup(source, route)}`;
+  <div class="route-day-picker"><p class="route-day-picker__label">按日期查看路线</p><div class="route-day-tabs" role="group" aria-label="${escapeHtml(source.label || "当前国家")}路线日期"><button type="button" data-route-day="0" aria-pressed="${!route}">总览</button>${mapRoutes.map((item) => { const day = state.data.days.find((candidate) => candidate.day === item.day); return day ? `<button type="button" data-route-day="${item.day}" style="--route-color:${item.color}" aria-pressed="${item === route}"><i></i>${day.date.slice(5).replace("-", "/")}</button>` : ""; }).join("")}</div></div>${travelMapMarkup(source, route)}`;
   if (route) activateDayMaps(root);
 }
 
